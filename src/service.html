@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CAS - AI Servoce</title>
+        <!-- js -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="../js/chatGPT.js" defer type="module"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <!-- header -->
+        <!-- prettier-ignore -->
+        <header class="relative z-50 w-full flex-none text-sm font-semibold leading-6 text-slate-900 border-b border-gray-300">
+            <nav aria-label="Global" class="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
+                <div class="relative flex items-center py-[2.125rem]">
+                    <a class="mr-auto flex-none text-slate-900 text-3xl" href="../index.html">
+                        Create Advertisement Script</a>
+                    <div class="hidden lg:flex lg:items-center text-xl">
+                        <a class="ml-8" href="service.html">AI Service</a>
+                        <div class="ml-2 hidden rounded-full bg-[#04B404] px-2 py-1 text-xs text-white sm:block">
+                            Recommand
+                        </div>
+                        <a class="ml-8" href="https://github.com/Hyunwooz/OrmiProject">Docs</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- // header -->
+        <!-- prettier-ignore -->
+        <main class="min-h-screen w-3/5 py-10 mx-auto">
+            <form action="post">
+                <h2 class="text-3xl block my-10 font-bold text-gray-700">Question 1. 광고의 목표가 무엇인가요?</h2>
+                <div class=" border border-1 rounded border-gray-400 ">
+                    <fieldset aria-required="true">
+                        <div class="mb-2 border-b border-gray-300 p-5 text-xl font-bold text-gray-600">목표 선택하기</div>
+                        <div class="p-5 grid grid-rows-2 grid-flow-col gap-x-[80px] gap-y-5">
+                            <div>
+                                <label for="판매" >
+                                    <div class="flex flex-col justify-center items-center border border-1 rounded p-5 border-gray-300 h-[250px] hover:border-2 hover:border-blue-400">
+                                        <i class="fa-solid fa-gift text-5xl mb-4"></i>
+                                        <p class="text-xl font-bold mb-4">판매</p>
+                                        <p>온라인, 앱, 전화, 매장을 통한 판매를 촉진합니다.</p>
+                                    </div>
+                                </label>
+                                <input class="hidden" type="radio" id="판매" name="campaignGoal" value="판매">
+                            </div>
+                            <div>
+                                <label for="리드" >
+                                    <div class="flex flex-col justify-center items-center border border-1 rounded p-5 border-gray-300 h-[250px] hover:border-2 hover:border-blue-400">
+                                        <i class="fa-solid fa-users text-5xl mb-4"></i>
+                                        <p class="text-xl font-bold mb-4">리드</p>
+                                        <p>고객의 액션을 유도하여 리드 및 다른 전환를 늘립니다.</p>
+                                    </div>
+                                </label>
+                                <input class="hidden" type="radio" id="리드" name="campaignGoal" value="리드">
+                            </div>
+                            <div>
+                                <label for="웹사이트트래픽" >
+                                    <div class="flex flex-col justify-center items-center border border-1 rounded p-5 border-gray-300 h-[250px] hover:border-2 hover:border-blue-400">
+                                        <i class="fa-solid fa-chart-column text-5xl mb-4"></i>
+                                        <p class="text-xl font-bold mb-4">웹사이트 트래픽</p>
+                                        <p>관련성이 높은 사용자가 웹사이트를 방문하도록 유도합니다.</p>
+                                    </div>
+                                </label>
+                                <input class="hidden" type="radio" id="웹사이트트래픽" name="campaignGoal" value="웹사이트트래픽">
+                            </div>
+                            <div>
+                                <label for="앱프로모션" >
+                                    <div class="flex flex-col justify-center items-center border border-1 rounded p-5 border-gray-300 h-[250px] hover:border-2 hover:border-blue-400">
+                                        <i class="fa-solid fa-mobile-screen-button text-5xl mb-4"></i>
+                                        <p class="text-xl font-bold mb-4">앱 프로모션</p>
+                                        <p>앱의 설치 수, 참여도 및 사전 등록을 늘립니다.</p>
+                                    </div>
+                                </label>
+                                <input class="hidden" type="radio" id="앱프로모션" name="campaignGoal" value="앱프로모션">
+                            </div>                          
+                        </div>
+                    </fieldset>
+                </div>
+                <h2 class="text-3xl block my-10 font-bold text-gray-700">Question 2. 광고의 유형은 무엇인가요?</h2>
+                <div class=" border border-1 rounded border-gray-400 ">
+                    <fieldset aria-required="true">
+                        <div class="mb-2 border-b border-gray-300 p-5 text-xl font-bold text-gray-600">유형 선택하기</div>
+                        <div class="p-5 grid grid-rows-1 grid-flow-col gap-x-[80px] gap-y-5">
+                            <div>
+                                <label for="검색" >
+                                    <div class="flex flex-col justify-center items-center border border-1 rounded p-5 border-gray-300 h-[250px] hover:border-2 hover:border-blue-400">
+                                        <i class="fa-solid fa-magnifying-glass text-5xl mb-4"></i>
+                                        <p class="text-xl font-bold mb-4">검색</p>
+                                        <p>검색에서 구매 의도가 높은 고객에게 노출합니다.</p>
+                                    </div>
+                                </label>
+                                <input class="hidden" type="radio" id="검색" name="campaignType" value="검색">
+                            </div>
+                            <div>
+                                <label for="디스플레이" >
+                                    <div class="flex flex-col justify-center items-center border border-1 rounded p-5 border-gray-300 h-[250px] hover:border-2 hover:border-blue-400">
+                                        <i class="fa-solid fa-display text-5xl mb-4"></i>
+                                        <p class="text-xl font-bold mb-4">디스플레이</p>
+                                        <p>눈에 잘 띄는 광고 소재로 사이트와 앱을 통해 고객에게 도달합니다.</p>
+                                    </div>
+                                </label>
+                                <input class="hidden" type="radio" id="디스플레이" name="campaignType" value="디스플레이">
+                            </div>
+                            <div>
+                                <label for="쇼핑" >
+                                    <div class="flex flex-col justify-center items-center border border-1 rounded p-5 border-gray-300 h-[250px] hover:border-2 hover:border-blue-400">
+                                        <i class="fa-solid fa-basket-shopping text-5xl mb-4"></i>
+                                        <p class="text-xl font-bold mb-4">쇼핑</p>
+                                        <p>쇼핑객이 구매할 제품을 살펴볼 때 나의 상품을 표시합니다.</p>
+                                    </div>
+                                </label>
+                                <input class="hidden" type="radio" id="쇼핑" name="campaignType" value="쇼핑">
+                            </div>                        
+                        </div>
+                    </fieldset>
+                </div>
+                <h2 class="text-3xl block my-10 font-bold text-gray-700">Question 3. 광고의 카테고리가 무엇인가요?</h2>
+                <div class=" border border-1 rounded border-gray-400 ">
+                    
+                    <fieldset aria-required="true">
+                        <div class="mb-2 border-b border-gray-300 p-5 text-xl font-bold text-gray-600">카테고리 선택하기</div>
+                        <div class="p-5 grid grid-rows-6 grid-flow-col gap-x-[80px] gap-y-5">
+                            <div>
+                                <label for="인테리어및조경">인테리어 및 조경
+                                </label>
+                                <input type="radio" id="인테리어및조경" name="campaignCategory" value="인테리어및조경">
+                            </div>
+                            <div>
+                                <label for="컴퓨터 및 전자제품">컴퓨터 및 전자제품
+                                </label>
+                                <input type="radio" id="컴퓨터 및 전자제품" name="campaignCategory" value="컴퓨터 및 전자제품">
+                            </div>
+                            <div>
+                                <label for="취미 및 레저">취미 및 레저
+                                </label>
+                                <input type="radio" id="취미 및 레저" name="campaignCategory" value="취미 및 레저">
+                            </div>
+                            <div>
+                                <label for="사회">사회
+                                </label>
+                                <input type="radio" id="사회" name="campaignCategory" value="사회">
+                            </div>
+                            <div>
+                                <label for="취업 및 교육">취업 및 교육
+                                </label>
+                                <input type="radio" id="취업 및 교육" name="campaignCategory" value="취업 및 교육">
+                            </div>
+                            <div>
+                                <label for="자동차">자동차
+                                </label>
+                                <input type="radio" id="자동차" name="campaignCategory" value="자동차">
+                            </div>
+                            <div>
+                                <label for="인터넷">인터넷
+                                </label>
+                                <input type="radio" id="인터넷" name="campaignCategory" value="인터넷">
+                            </div>
+                            <div>
+                                <label for="예술 및 엔터테인먼트">예술 및 엔터테인먼트
+                                </label>
+                                <input type="radio" id="예술 및 엔터테인먼트" name="campaignCategory" value="예술 및 엔터테인먼트">
+                            </div>
+                            <div>
+                                <label for="여행">여행
+                                </label>
+                                <input type="radio" id="여행" name="campaignCategory" value="여행">
+                            </div>
+                            <div>
+                                <label for="애완동물 및 동물">애완동물 및 동물
+                                </label>
+                                <input type="radio" id="애완동물 및 동물" name="campaignCategory" value="애완동물 및 동물">
+                            </div>
+                            <div>
+                                <label for="식음료">식음료
+                                </label>
+                                <input type="radio" id="식음료" name="campaignCategory" value="식음료">
+                            </div>
+                            <div>
+                                <label for="스포츠">스포츠
+                                </label>
+                                <input type="radio" id="스포츠" name="campaignCategory" value="스포츠">
+                            </div>
+                            <div>
+                                <label for="쇼핑">쇼핑
+                                </label>
+                                <input type="radio" id="쇼핑" name="campaignCategory" value="쇼핑">
+                            </div>
+                            <div>
+                                <label for="비즈니스 및 산업">비즈니스 및 산업
+                                </label>
+                                <input type="radio" id="비즈니스 및 산업" name="campaignCategory" value="비즈니스 및 산업">
+                            </div>
+                            <div>
+                                <label for="부동산">부동산
+                                </label>
+                                <input type="radio" id="부동산" name="campaignCategory" value="부동산">
+                            </div>
+                            <div>
+                                <label for="미용 및 피트니스">미용 및 피트니스
+                                </label>
+                                <input type="radio" id="미용 및 피트니스" name="campaignCategory" value="미용 및 피트니스">
+                            </div>
+                            <div>
+                                <label for="도서 및 문학">도서 및 문학
+                                </label>
+                                <input type="radio" id="도서 및 문학" name="campaignCategory" value="도서 및 문학">
+                            </div>
+                            <div>
+                                <label for="뉴스">뉴스
+                                </label>
+                                <input type="radio" id="뉴스" name="campaignCategory" value="뉴스">
+                            </div>
+                            <div>
+                                <label for="금융">금융
+                                </label>
+                                <input type="radio" id="금융" name="campaignCategory" value="금융">
+                            </div>
+                            <div>
+                                <label for="과학">과학
+                                </label>
+                                <input type="radio" id="과학" name="campaignCategory" value="과학">
+                            </div>
+                            <div>
+                                <label for="게임">게임
+                                </label>
+                                <input type="radio" id="게임" name="campaignCategory" value="게임">
+                            </div>
+                            <div>
+                                <label for="게임">건강
+                                </label>
+                                <input type="radio" id="건강" name="campaignCategory" value="건강">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <h2 class="text-3xl block my-10 font-bold text-gray-700">Question 4. 광고 타겟팅 설정하기</h2>
+                <div class=" border border-1 rounded border-gray-400 ">
+                    <div class="mb-2 border-b border-gray-300 p-5 text-xl font-bold text-gray-600">타겟팅 설정하기</div>
+                    <div class="p-5 grid grid-rows-1 grid-flow-col gap-x-[80px] gap-y-5">
+                        <div>
+                            <div class="mb-1 text-xl font-bold text-gray-600">나이</div>
+                            <fieldset aria-required="true" class="border border-1 border-gray-300 p-5 grid grid-rows-3 grid-flow-col">
+                                <div>
+                                    <label for="18~24">18~24세
+                                    </label>
+                                    <input type="radio" id="18~24" name="campaignCategory" value="18~24">
+                                </div>
+                                <div>
+                                    <label for="25~34">25~34세
+                                    </label>
+                                    <input type="radio" id="25~34" name="campaignCategory" value="25~34">
+                                </div>
+                                <div>
+                                    <label for="35~44">35~44세
+                                    </label>
+                                    <input type="radio" id="35~44" name="campaignCategory" value="35~44">
+                                </div>
+                                <div>
+                                    <label for="45~54">45~54세
+                                    </label>
+                                    <input type="radio" id="45~54" name="campaignCategory" value="45~54">
+                                </div>
+                                <div>
+                                    <label for="55~64">55~64세
+                                    </label>
+                                    <input type="radio" id="55~64" name="campaignCategory" value="55~64">
+                                </div>
+                                <div>
+                                    <label for="65세 이상">65세 이상
+                                    </label>
+                                    <input type="radio" id="65세 이상" name="campaignCategory" value="65세 이상">
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div>
+                            <div class="mb-1 text-xl font-bold text-gray-600">성별</div>
+                            <fieldset aria-required="true" class="border border-1 border-gray-300 p-5 grid grid-rows-3 grid-flow-col">
+                                <div>
+                                    <label for="남자">남자
+                                    </label>
+                                    <input type="radio" id="남자" name="campaignCategory" value="남자">
+                                </div>
+                                <div>
+                                    <label for="여자">여자
+                                    </label>
+                                    <input type="radio" id="여자" name="campaignCategory" value="여자">
+                                </div>
+                                <div>
+                                    <label for="상관없음">상관없음
+                                    </label>
+                                    <input type="radio" id="상관없음" name="campaignCategory" value="상관없음">
+                                </div>
+                            </fieldset>
+                        </div>                       
+                    </div>
+                </div>
+                <h2 class="text-3xl block my-10 font-bold text-gray-700">Question 5. 광고 세부 내용</h2>
+                <textarea
+                    type="text"
+                    class="input_question border border-gray-950 rounded-xl w-full p-3"
+                    rows="5"
+                    name="addContents"
+                ></textarea>
+                <button type="submit">전송</button>
+            </form>
+            <section>
+                <ul></ul>
+            </section>
+        </main>
+        <!-- footer -->
+        <!-- prettier-ignore -->
+        <footer>
+            <div class="flex bg-slate-100 p-6 mt-auto">
+                <div class="text-2xl text-slate-600 mr-5 pr-10 border-r border-slate-300">
+                    <strong>Automatically</strong>
+                    <p class="text-slate-500 mr-5">generate advertising scripts</p>
+                    <strong>using ChatGPT</strong>
+                </div>
+                <div class="flex justify-center items-center flex-col ml-10">
+                    <strong class="text-xl text-slate-600"
+                        >ChatGPT 연동 프로젝트 입니다 :)</strong
+                    >
+                    <p class="text-sm text-slate-500 pt-5">
+                        Copyright 2023. Chilli All rights reserved.
+                    </p>
+                </div>
+                <div class="ml-auto w-1/5 flex justify-center items-center">
+                    <a href="https://github.com/Hyunwooz/OrmiProject" class="flex justify-center items-center rounded-xl font-bold bg-gray-400 w-2/4 text-white h-[40px]">GitHub Repo</a>
+                </div>
+            </div>
+        </footer>
+        <!-- //footer -->
+    </body>
+</html>
