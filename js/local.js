@@ -1,10 +1,4 @@
 const $form = document.querySelector("form");
-const $campaignGoal = document.querySelector(".campaignGoal");
-const $campaignType = document.querySelector(".campaignType");
-const $category = document.querySelector(".campaignCategory");
-const $age = document.querySelector(".targetAge");
-const $location = document.querySelector(".targetLocation");
-const $gender = document.querySelector(".targetGender");
 
 let newCampaignGoal,
     newCampaignType,
@@ -12,8 +6,6 @@ let newCampaignGoal,
     newAge,
     newLocation,
     newGender;
-
-let gptSetting = JSON.parse(localStorage.getItem("gptSetting"));
 
 // submit
 $form.addEventListener("submit", (e) => {
