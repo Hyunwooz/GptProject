@@ -1,0 +1,30 @@
+.header_title {
+    font-family: "Russo One", sans-serif;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#loading {
+    margin-top: 20px;
+}
+
+#loading .spinner {
+    display: none;
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: #4f22f1;
+    border-bottom-color: #4f22f1;
+    animation: spinner 0.8s ease infinite;
+    margin-left: auto;
+    margin-right: auto;
+}

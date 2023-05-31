@@ -4,22 +4,31 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>CAS - Home</title>
+        <title>AgAs - Home</title>
         <!-- js -->
         <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./css/style.css" />
     </head>
     <body>
         <!-- header -->
         <!-- prettier-ignore -->
         <header class="relative z-50 w-full flex-none text-sm font-semibold leading-6 text-slate-900 border-b border-gray-300">
             <nav aria-label="Global" class="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
-                <div class="relative flex items-center py-[2.125rem]">
-                    <a class="mr-auto flex-none text-slate-900 text-3xl" href="index.html">
-                        Create Advertisement Script</a>
-                    <div class="hidden lg:flex lg:items-center text-xl">
-                        <a class="ml-8" href="src/service.html">AI Service</a>
-                        <div class="ml-2 hidden rounded-full bg-[#04B404] px-2 py-1 text-xs text-white sm:block">
-                            Recommand
+                <div class="relative flex items-center px-[10rem] py-[2.125rem]">
+                    <a class="header_title mr-auto text-end justify-center text-blue-500 text-6xl" href="index.html">
+                        AgAs
+                        <p class="text-sm pt-2">automatically generate advertising script</p>
+                    </a>
+                    <div class=" hidden lg:flex lg:items-center text-2xl">
+                        <a class="ml-8" href="view/setting.html">Try It</a>
+                        <div class="ml-2 hidden rounded-full bg-violet-600 px-1 py-1 text-xs text-white sm:block">
+                            ⭐
                         </div>
                         <a class="ml-8" href="https://github.com/Hyunwooz/OrmiProject">Docs</a>
                     </div>
@@ -34,21 +43,21 @@
         <!-- prettier-ignore -->
         <footer>
             <div class="flex bg-slate-100 p-6 mt-auto">
-                <div class="text-2xl text-slate-600 mr-5 pr-10 border-r border-slate-300">
-                    <strong>Automatically</strong>
+                <div class="text-2xl text-blue-600 mr-5 pr-10 border-r border-slate-300">
+                    <strong class="text-3xl">Automatically</strong>
                     <p class="text-slate-500 mr-5">generate advertising scripts</p>
-                    <strong>using ChatGPT</strong>
+                    using <strong class="text-3xl">ChatGPT</strong>
                 </div>
                 <div class="flex justify-center items-center flex-col ml-10">
-                    <strong class="text-xl text-slate-600"
+                    <strong class="text-xl text-blue-600"
                         >Ormi 1기 ChatGPT 연동 프로젝트 입니다 :)</strong
                     >
-                    <p class="text-sm text-slate-500 pt-5">
+                    <p class="text-sm text-blue-600 pt-5">
                         Copyright 2023. Chilli All rights reserved.
                     </p>
                 </div>
                 <div class="ml-auto w-1/5 flex justify-center items-center">
-                    <a href="https://github.com/Hyunwooz/OrmiProject" class="flex justify-center items-center rounded-xl font-bold bg-gray-400 w-2/4 text-white h-[40px]">GitHub Repo</a>
+                    <a href="https://github.com/Hyunwooz/OrmiProject" class="flex justify-center items-center rounded-xl font-bold bg-blue-400 w-2/4 text-white h-[40px]">GitHub Repo</a>
                 </div>
             </div>
         </footer>
