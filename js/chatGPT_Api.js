@@ -129,7 +129,28 @@ const printAnswer = (answer) => {
     textarea.classList =
         "answer border border-slate-300 rounded-xl w-full h-full py-3 px-3 my-3 resize-none";
     textarea.innerText = answer;
+    if (data) {
+        data.push({
+            role: "assistant",
+            content: answer,
+        });
+    }
     $chatList.appendChild(textarea);
+};
+
+// 화면에 질문 그려주는 함수
+const printQuestion = async () => {
+    if (question) {
+        let textarea = document.createElement("p");
+        textarea.classList =
+            "answer border border-slate-300 rounded-xl w-full h-full py-3 px-3 my-3 resize-none";
+        questionData.map((el) => {
+            textarea.innerText = el.content;
+        });
+        $chatList.appendChild(textarea);
+        questionData = [];
+        question = false;
+    }
 };
 
 // api 요청보내는 함수
@@ -153,7 +174,7 @@ const apiPost = async () => {
     $loading.style.display = "none";
 };
 
-// Connect Api !
+// Api 와 처음 통신하는 기능 !
 
 const connectApi = (event) => {
     if (event.target.id == "connect") {
@@ -167,5 +188,20 @@ const connectApi = (event) => {
     }
 };
 
+// reconnect Api !
+
+const reconnectApi = (event) => {
+    event.preventDefault();
+
+    question = $input.value;
+    $input.value = null;
+
+    sendQuestion(question);
+    $loading.style.display = "block";
+    apiPost();
+    printQuestion();
+};
+
 $connectBtn.addEventListener("click", connectApi);
 $disconnectBtn.addEventListener("click", connectApi);
+$addQuestion.addEventListener("submit", reconnectApi);
