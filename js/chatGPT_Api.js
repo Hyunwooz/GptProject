@@ -4,7 +4,7 @@ const $chatList = document.querySelector(".answerSection");
 const $input = document.querySelector(".input_question");
 const $connectBtn = document.querySelector("#connect");
 const $disconnectBtn = document.querySelector("#disconnect");
-const $loading = document.querySelector("#loading > .spinner");
+const $loading = document.querySelector("#loading");
 const $addQuestion = document.querySelector("#addQuestion");
 
 // openAI API
@@ -90,14 +90,13 @@ let data = [
     {
         role: "user",
         content:
-            "광고의 제목 , 설명, 이미지에 대한 대답을 해주고, 답변을 Json 형식으로 해줘 설명은 30자이상으로 해주고 메인 키워드와 관련된 추천 키워드 3개와 현재 광고 유형을 알려줘.",
+            "광고의 제목 , 설명을 만들어주고, 답변을 Json 형식으로 해줘 설명은 30자이상으로 해주고 메인 키워드와 관련된 추천 키워드 3개와 현재 광고 유형을 알려줘.",
     },
     {
         role: "assistant",
         content: JSON.stringify({
             ad_title: "광고 제목",
             ad_description: "설명",
-            ad_image_url: "이미지 url",
             ad_Main_keyword: "메인 키워드",
             ad_keyword: "추천 키워드1, 추천 키워드2, 추천 키워드3",
             ad_type: "광고 유형",
@@ -114,7 +113,6 @@ let data = [
         content: JSON.stringify({
             ad_title: "광고 제목",
             ad_description: "설명",
-            ad_image_url: "이미지 url",
             ad_Main_keyword: "메인 키워드",
             ad_keyword: "추천 키워드1, 추천 키워드2, 추천 키워드3",
             ad_type: "광고 유형",
@@ -123,7 +121,38 @@ let data = [
     },
     {
         role: "user",
+        content:JSON.stringify({
+            "광고 목표": "판매",
+            "광고 유형": "검색",
+            "카테고리": "여행",
+            "메인 키워드": "제주도 자전거 여행",
+            "연령대": "18세~24세",
+            "성별": "여자",
+        }),
+    },
+    {
+        role: "assistant",
+        content: JSON.stringify({
+            ad_title: "여자를 위한 제주도 자전거 여행",
+            ad_description: "아름다운 제주도의 자연을 만끽하며 자전거를 타는 특별한 경험을 느껴보세요. 친구, 가족, 연인과 함께 즐기는 잊지 못할 추억, 제주도의 다양한 문화와 역사를 배울 수 있는 기회입니다.",
+            ad_Main_keyword: "제주도 자전거 여행",
+            ad_keyword: "여행, 자전거 여행, 자전거 렌트",
+            ad_type: "검색",
+            ad_category: "여행",
+        }),
+    },
+    {
+        role: "user",
+        content:
+            "무조건 위와 같은 형식으로 답변해줘, 위의 형식을 벗어나면 안돼",
+    },
+    {
+        role: "user",
         content: "ad_type은 디스플레이, 검색 , 쇼핑 이 세개로만 대답해줘",
+    },
+    {
+        role: "user",
+        content: "앞으로 ad_type을 바꾸지 말고 말해줘",
     },
 ];
 
@@ -173,6 +202,8 @@ const printAnswer = (answer) => {
             "answer border border-slate-300 rounded-xl w-full h-full py-3 px-3 my-3";
         textarea.innerText = answer;
         $chatList.appendChild(textarea);
+    } else {
+        alert("Error 발생")
     }
 };
 
@@ -206,24 +237,32 @@ const apiPost = async () => {
         .then((res) => {
             answerSave(res.choices[0].message.content);
             printAnswer(res.choices[0].message.content);
+            
         })
         .catch((err) => {
             console.log(err);
         });
-    $loading.style.display = "none";
+        $addQuestion.classList.remove("hidden");
+        $loading.classList.toggle('hidden');
 };
 
 // Api 와 처음 통신 !
 
 const connectApi = (event) => {
     if (event.target.id == "connect") {
-        question = `광고 목표 : ${gptSetting[0].newCampaignGoal} , 광고 유형 : ${gptSetting[0].newCampaignType} \n 카테고리 : ${gptSetting[0].newCategory} , 메인 키워드 : ${gptSetting[0].newKeyword} , 연령대 : ${gptSetting[0].newAge} , 성별 : ${gptSetting[0].newGender}`;
-        sendQuestion(question);
-        $loading.style.display = "block";
+        question = {
+            "광고 목표": gptSetting[0].newCampaignGoal,
+            "광고 유형": gptSetting[0].newCampaignType,
+            "카테고리": gptSetting[0].newCategory,
+            "메인 키워드": gptSetting[0].newKeyword,
+            "연령대": gptSetting[0].newAge,
+            "성별": gptSetting[0].newGender,
+        };
+        sendQuestion(JSON.stringify(question));
+        $loading.classList.toggle('hidden');
         apiPost();
-        $addQuestion.classList.remove("hidden");
     } else if (event.target.id == "disconnect") {
-        location.href = location.href.replace("service.html", "setting.html");
+        location.href = "question.html";
     }
 };
 
@@ -236,7 +275,7 @@ const reconnectApi = (event) => {
     $input.value = null;
 
     sendQuestion(question);
-    $loading.style.display = "block";
+    $loading.classList.toggle('hidden');
     apiPost();
     printQuestion();
 };
@@ -244,3 +283,4 @@ const reconnectApi = (event) => {
 $connectBtn.addEventListener("click", connectApi);
 $disconnectBtn.addEventListener("click", connectApi);
 $addQuestion.addEventListener("submit", reconnectApi);
+

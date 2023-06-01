@@ -21,8 +21,6 @@ function createDiv(value, text) {
 
 function render() {
     const show = document.querySelector(".showSetting");
-    show.innerHTML = "";
-
     const goal = createDiv(gptSetting[0].newCampaignGoal, "광고 목표");
     const type = createDiv(gptSetting[0].newCampaignType, "광고 유형");
     const category = createDiv(gptSetting[0].newCategory, "카테고리");

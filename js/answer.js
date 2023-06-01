@@ -1,5 +1,6 @@
 // 화면에 검색 광고 스크립트를 그려주는 함수
 export const createSearch_AD = (data) => {
+
     let search_Div = document.createElement("div");
     let sponser_P = document.createElement("p");
     let desc_Wrap = document.createElement("div");
