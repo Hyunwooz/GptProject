@@ -26,9 +26,9 @@ function render() {
     const goal = createDiv(gptSetting[0].newCampaignGoal, "광고 목표");
     const type = createDiv(gptSetting[0].newCampaignType, "광고 유형");
     const category = createDiv(gptSetting[0].newCategory, "카테고리");
-    const age = createDiv(gptSetting[0].newAge, "연령대");
+    const keyword = createDiv(gptSetting[0].newKeyword, "키워드");
     const gender = createDiv(gptSetting[0].newGender, "성별");
-    const location = createDiv(gptSetting[0].newLocation, "지역");
+    const age = createDiv(gptSetting[0].newAge, "연령대");
 
-    show.append(goal, type, category, age, gender, location);
+    show.append(goal, type, category, keyword, gender, age);
 }

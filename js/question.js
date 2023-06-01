@@ -1,8 +1,8 @@
 const $campaignGoal = document.querySelector(".campaignGoal");
 const $campaignType = document.querySelector(".campaignType");
 const $category = document.querySelector(".campaignCategory");
+const $keyword = document.querySelector(".campaignKeyword");
 const $age = document.querySelector(".targetAge");
-const $location = document.querySelector(".targetLocation");
 const $gender = document.querySelector(".targetGender");
 const $form = document.querySelector("form");
 
@@ -11,7 +11,7 @@ gptSetting = [];
 
 const nextQuestion = (event) => {
     let curr = event.target;
-
+    console.log(curr);
     while (curr.tagName != "SECTION") {
         curr = curr.parentNode;
     }
@@ -34,9 +34,8 @@ const nextQuestion = (event) => {
     btn.addEventListener("click", nextQuestion);
 });
 
-[...$age.querySelectorAll("input")].forEach((btn) => {
-    btn.addEventListener("click", nextQuestion);
-});
+$keyword.addEventListener("input", nextQuestion);
+$age.addEventListener("change", nextQuestion);
 
 // Next 버튼 클릭시
 $form.addEventListener("submit", (e) => {
@@ -45,8 +44,8 @@ $form.addEventListener("submit", (e) => {
     let newCampaignGoal,
         newCampaignType,
         newCategory,
+        newKeyword,
         newAge,
-        newLocation,
         newGender;
 
     [...$campaignGoal.querySelectorAll("input")].forEach((e) => {
@@ -67,31 +66,17 @@ $form.addEventListener("submit", (e) => {
         }
     });
 
-    [...$age.querySelectorAll("input")].forEach((e) => {
-        if (e.checked) {
-            newAge = e.value;
-        }
-    });
-
-    [...$location.querySelectorAll("input")].forEach((e) => {
-        if (e.checked) {
-            newLocation = e.value;
-        }
-    });
-
-    [...$gender.querySelectorAll("input")].forEach((e) => {
-        if (e.checked) {
-            newGender = e.value;
-        }
-    });
+    newKeyword = $keyword.value;
+    newAge = $age.value;
+    newGender = $gender.value;
 
     gptSetting.push({
         newCampaignGoal,
         newCampaignType,
         newCategory,
+        newKeyword,
         newAge,
         newGender,
-        newLocation,
     });
 
     // 로컬스토리지(DB에 저장)
