@@ -11,7 +11,7 @@ function createDiv(value, text) {
     label.classList = "text-xs font-bold mb-1";
     input.classList = "border border-slate-300 rounded px-3 py-1";
 
-    input.value = value;
+    input.value = value.replace(/_/g,' ');
     input.readOnly = true;
     label.innerText = text;
     div.append(label, input);
