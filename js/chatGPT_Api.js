@@ -88,7 +88,7 @@ let data = [
     {
         role: "user",
         content:
-            "광고의 제목 , 설명, 이미지에 대한 대답을 해주고, 추원 키워드랑 현재 광고 유형을 알려줘. 답변을 Json 형식으로 해줘",
+            "광고의 제목 , 설명, 이미지에 대한 대답을 해주고, 답변을 Json 형식으로 해줘 설명은 30자이상으로 해주고 메인 키워드와 관련된 추천 키워드 3개와 현재 광고 유형을 알려줘.",
     },
     {
         role: "assistant",
@@ -96,13 +96,32 @@ let data = [
             ad_title: "광고 제목",
             ad_description: "설명",
             ad_image_url: "이미지 url",
-            ad_keyword: "키워드",
+            ad_Main_keyword: "메인 키워드",
+            ad_keyword: "추천 키워드1, 추천 키워드2, 추천 키워드3",
             ad_type: "광고 유형",
+            ad_category: "카테고리",
         }),
     },
     {
         role: "user",
-        content: "위와 같은 형식으로 이제부터 답변해줘",
+        content:
+            "무조건 위와 같은 형식으로 답변해줘, 위의 형식을 벗어나면 안돼",
+    },
+    {
+        role: "assistant",
+        content: JSON.stringify({
+            ad_title: "광고 제목",
+            ad_description: "설명",
+            ad_image_url: "이미지 url",
+            ad_Main_keyword: "메인 키워드",
+            ad_keyword: "추천 키워드1, 추천 키워드2, 추천 키워드3",
+            ad_type: "광고 유형",
+            ad_category: "카테고리",
+        }),
+    },
+    {
+        role: "user",
+        content: "ad_type은 디스플레이, 검색 , 쇼핑 이 세개로만 대답해줘",
     },
 ];
 
@@ -123,19 +142,79 @@ const sendQuestion = (question) => {
     }
 };
 
-// 화면에 답변 그려주는 함수
-const printAnswer = (answer) => {
-    let textarea = document.createElement("p");
-    textarea.classList =
-        "answer border border-slate-300 rounded-xl w-full h-full py-3 px-3 my-3 resize-none";
-    textarea.innerText = answer;
+// 답변을 저장해주는 함수
+const answerSave = (answer) => {
     if (data) {
         data.push({
             role: "assistant",
             content: answer,
         });
     }
-    $chatList.appendChild(textarea);
+};
+
+// 화면에 검색 광고 모델 그려주는 함수
+const createSearch_AD = (data) => {
+    let search_Div = document.createElement("div");
+    let sponser_P = document.createElement("p");
+    let desc_Wrap = document.createElement("div");
+    let desc_Img = document.createElement("img");
+    let desc_Title_Div = document.createElement("div");
+    let desc_Title_P = document.createElement("p");
+    let desc_Url_A = document.createElement("a");
+    let ad_Div = document.createElement("div");
+    let ad_Title_A = document.createElement("a");
+    let ad_Desc_P = document.createElement("p");
+    let ad_Keyword_A = document.createElement("a");
+
+    search_Div.classList =
+        "border border-slate-300 rounded-xl w-full h-full py-3 px-[6rem] my-3";
+    sponser_P.innerText = "스폰서";
+    sponser_P.classList = "font-bold text-sm";
+    desc_Wrap.classList = "flex items-center mt-2";
+    desc_Img.classList = "w-8 h-8 bg-gray-800 rounded-full";
+    desc_Img.setAttribute("src", "../img/search_banner.png");
+    desc_Title_Div.classList = "text-xs ml-3";
+    desc_Title_P.classList = "text-sm";
+    desc_Title_P.innerText = "Yout Site";
+    desc_Url_A.innerText = "https://Your_Web_Site.com";
+    desc_Url_A.setAttribute("href", "#");
+    ad_Div.classList = "mt-1";
+    ad_Title_A.classList = "text-lg text-blue-700";
+    ad_Title_A.innerText = data.ad_title;
+    ad_Desc_P.classList = "mt-1 text-sm";
+    ad_Desc_P.innerText = data.ad_description;
+    ad_Keyword_A.classList = "mt-1 text-xs text-blue-700";
+    ad_Keyword_A.innerText = data.ad_keyword;
+
+    desc_Title_Div.append(desc_Title_P, desc_Url_A);
+    desc_Wrap.append(desc_Img, desc_Title_Div);
+    ad_Div.append(ad_Title_A, ad_Desc_P, ad_Keyword_A);
+    search_Div.append(sponser_P, desc_Wrap, ad_Div);
+
+    return search_Div;
+};
+
+// 화면에 답변 그려주는 함수
+const printAnswer = (answer) => {
+    console.log(answer);
+    const gpt_answer = JSON.parse(answer);
+
+    if (gpt_answer.ad_type == "디스플레이") {
+        let textarea = document.createElement("p");
+        textarea.classList =
+            "answer border border-slate-300 rounded-xl w-full h-full py-3 px-3 my-3";
+        textarea.innerText = answer;
+        $chatList.appendChild(textarea);
+    } else if (gpt_answer.ad_type == "검색") {
+        const ad = createSearch_AD(gpt_answer);
+        $chatList.appendChild(ad);
+    } else if (gpt_answer.ad_type == "쇼핑") {
+        let textarea = document.createElement("p");
+        textarea.classList =
+            "answer border border-slate-300 rounded-xl w-full h-full py-3 px-3 my-3";
+        textarea.innerText = answer;
+        $chatList.appendChild(textarea);
+    }
 };
 
 // 화면에 질문 그려주는 함수
@@ -166,6 +245,7 @@ const apiPost = async () => {
     })
         .then((res) => res.json())
         .then((res) => {
+            answerSave(res.choices[0].message.content);
             printAnswer(res.choices[0].message.content);
         })
         .catch((err) => {
@@ -174,11 +254,11 @@ const apiPost = async () => {
     $loading.style.display = "none";
 };
 
-// Api 와 처음 통신하는 기능 !
+// Api 와 처음 통신 !
 
 const connectApi = (event) => {
     if (event.target.id == "connect") {
-        question = `광고 목표 : ${gptSetting[0].newCampaignGoal} , 광고 유형 : ${gptSetting[0].newCampaignType} \n 카테고리 : ${gptSetting[0].newCategory} , 연령대 : ${gptSetting[0].newAge} , 성별 : ${gptSetting[0].newGender}, 지역 : ${gptSetting[0].newLocation}`;
+        question = `광고 목표 : ${gptSetting[0].newCampaignGoal} , 광고 유형 : ${gptSetting[0].newCampaignType} \n 카테고리 : ${gptSetting[0].newCategory} , 메인 키워드 : ${gptSetting[0].newKeyword} , 연령대 : ${gptSetting[0].newAge} , 성별 : ${gptSetting[0].newGender}`;
         sendQuestion(question);
         $loading.style.display = "block";
         apiPost();
