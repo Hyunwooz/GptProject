@@ -57,17 +57,20 @@
             <section>
                 <div class="answerSection flex flex-col"></div>
             </section>
-            <div id="loading"><div class="spinner"></div></div>
+            <div class="hidden" id="loading">
+                <p class="font-bold text-center text-blue-800 mt-2">입력하신 정보를 토대로 광고를 생성 중입니다.</p>
+                <p class="font-bold text-center text-blue-800 mb-2">잠시만 기다려주세요 :)</p>
+                <div class="spinner"></div>
+            </div>
             <form class="hidden" id="addQuestion" action="post">
                 <div class="relative mt-3">
-                    <textarea
+                    <input
                         type="text"
-                        class="input_question border border-slate-300 rounded-xl w-full py-3 pl-3 pr-[6rem] resize-none"
-                        rows="2"
+                        class="input_question border border-slate-300 rounded-xl w-full py-3 pl-3 pr-[6rem]"
                         name="addContents"
                         placeholder="수정하고 싶거나 추가할 내용을 AgAs한테 알려주세요!"
-                    ></textarea>
-                    <button class="block text-slate-600 text-3xl p-2 rounded-xl absolute bottom-4 right-3" type="submit"><i class="fa-solid fa-paper-plane hover:text-blue-700 hover:text-4xl"></i></button>
+                    ></input>
+                    <button class="block text-slate-600 text-2xl p-1 rounded-xl absolute top-1 right-3" type="submit"><i class="fa-solid fa-paper-plane hover:text-blue-700 hover:text-[1.6rem]"></i></button>
                 </div>
             </form>
             

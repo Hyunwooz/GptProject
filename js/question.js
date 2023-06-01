@@ -83,5 +83,5 @@ $form.addEventListener("submit", (e) => {
     localStorage.setItem("gptSetting", JSON.stringify(gptSetting));
 
     // 다음 페이지 Render
-    location.href = location.href.replace("question.html", "service.html");
+    location.href = "service.html";
 });
