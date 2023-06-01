@@ -11,7 +11,7 @@ gptSetting = [];
 
 const nextQuestion = (event) => {
     let curr = event.target;
-    console.log(curr);
+
     while (curr.tagName != "SECTION") {
         curr = curr.parentNode;
     }
@@ -34,7 +34,7 @@ const nextQuestion = (event) => {
     btn.addEventListener("click", nextQuestion);
 });
 
-$keyword.addEventListener("input", nextQuestion);
+$keyword.addEventListener("change", nextQuestion);
 $age.addEventListener("change", nextQuestion);
 
 // Next 버튼 클릭시
