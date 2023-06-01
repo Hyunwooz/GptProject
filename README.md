@@ -9,7 +9,7 @@
 ## 사용 기술
 
 -   tailwind Css
--   VanilaJs
+-   Vanila Js
 -   Html
 -   chatGPT API
 
@@ -64,7 +64,7 @@
 ## 추가 예정 사항
 
 1.  메인 화면 꾸미기
-2.  localStorage 활용 , 저장되어 있는 Data 활용
+2.  localStorage 활용 , 저장되어 있는 Data 활용 ( 60% / 100% )
 3.  광고의 유형별 다른 템플릿으로 답변 제공
 4.  광고 타겟팅 설정 유연성 증가(?) ~~(입력폼으로 변경할 지?)~~
 5.  기존 답변 저장 후 , 수정 사항 새로 요청하는 기능

@@ -7,7 +7,7 @@
         <title>AgAs - Service</title>
         <!-- js -->
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="../js/gptApi.js" defer type="module"></script>
+        <script src="../js/chatGPT_Api.js" defer type="module"></script>
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -25,7 +25,6 @@
     </head>
     <body>
         <!-- header -->
-        <!-- prettier-ignore -->
         <header class="relative z-50 w-full flex-none text-sm font-semibold leading-6 text-slate-900 border-b border-gray-300">
             <nav aria-label="Global" class="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
                 <div class="relative flex items-center px-[10rem] py-[2.125rem]">
@@ -34,7 +33,7 @@
                         <p class="text-sm pt-2">automatically generate advertising script</p>
                     </a>
                     <div class="hidden lg:flex lg:items-center text-2xl">
-                        <a class="ml-8" href="./setting.html">Try It</a>
+                        <a class="ml-8" href="./question.html">Try It</a>
                         <div class="ml-2 hidden rounded-full bg-violet-600 px-1 py-1 text-xs text-white sm:block text-white">
                             ⭐
                         </div>
@@ -45,9 +44,8 @@
         </header>
 
         <!-- // header -->
-        <!-- prettier-ignore -->
         <main class="min-h-screen w-3/6 py-10 mx-auto">
-            <div>
+            <section>
                 <div class="border border-slate-300 rounded-xl ">
                     <h2 class="my-4 text-center text-3xl font-bold text-blue-600">Check Your Setting</h2>
                     <div class="showSetting p-4"></div>
@@ -56,28 +54,26 @@
                         <a id="disconnect" class="text-center mt-1 text-blue-800 text-md py-1 px-2 rounded bottom-4 right-3 cursor-pointer">No, Information is incorrect.</a>
                     </div>
                 </div>
-            </div>
+            </section>
             <section>
                 <div class="answerSection flex flex-col"></div>
             </section>
             <div id="loading"><div class="spinner"></div></div>
             <form class="hidden" id="addQuestion" action="post">
-                <h2 class="text-3xl block my-10 font-bold text-gray-700">추가 내용</h2>
-                <div class="relative">
+                <div class="relative mt-3">
                     <textarea
                         type="text"
-                        class="input_question border border-gray-950 rounded-xl w-full py-3 pl-3 pr-[6rem] resize-none"
+                        class="input_question border border-slate-300 rounded-xl w-full py-3 pl-3 pr-[6rem] resize-none"
                         rows="2"
                         name="addContents"
-                        placeholder="수정하고 싶거나 추가할 내용을 입력하세요."
+                        placeholder="수정하고 싶거나 추가할 내용을 AgAs한테 알려주세요!"
                     ></textarea>
-                    <button class="block text-3xl p-2 rounded-xl absolute bottom-4 right-3" type="submit"><i class="fa-solid fa-paper-plane hover:text-blue-700 hover:text-4xl"></i></button>
+                    <button class="block text-slate-600 text-3xl p-2 rounded-xl absolute bottom-4 right-3" type="submit"><i class="fa-solid fa-paper-plane hover:text-blue-700 hover:text-4xl"></i></button>
                 </div>
             </form>
             
         </main>
         <!-- footer -->
-        <!-- prettier-ignore -->
         <footer>
             <div class="flex bg-slate-100 p-6 mt-auto">
                 <div class="text-2xl text-blue-600 mr-5 pr-10 border-r border-slate-300">
@@ -99,6 +95,6 @@
             </div>
         </footer>
         <!-- //footer -->
-        <script src="../js/showSetting.js"></script>
+        <script src="../js/display.js"></script>
     </body>
 </html>

@@ -32,7 +32,7 @@
                         <p class="text-sm pt-2">automatically generate advertising script</p>
                     </a>
                     <div class="hidden lg:flex lg:items-center text-2xl">
-                        <a class="ml-8" href="./setting.html">Try It</a>
+                        <a class="ml-8" href="./question.html">Try It</a>
                         <div class="ml-2 hidden rounded-full bg-violet-600 px-1 py-1 text-xs text-white sm:block">
                             ⭐
                         </div>
@@ -44,7 +44,7 @@
         <!-- // header -->
         <main class="min-h-screen w-3/6 py-10 mx-auto">
             <form method="post">
-                <section class="question__1">
+                <section id="question__1">
                     <h2 class="text-3xl block my-10 font-bold text-gray-700">Question 1. 광고의 목표가 무엇인가요?</h2>
                     <div class=" border border-1 rounded border-gray-400 ">
                         <fieldset class="campaignGoal">
@@ -84,7 +84,7 @@
                         </fieldset>
                     </div>
                 </section>
-                <section class="question__2 hidden">
+                <section class="hidden" id ="question__2">
                     <h2 class="text-3xl block my-10 font-bold text-gray-700">Question 2. 광고의 유형은 무엇인가요?</h2>
                     <div class=" border border-1 rounded border-gray-400 ">
                         <fieldset class="campaignType" required>
@@ -124,7 +124,7 @@
                         </fieldset>
                     </div>
                 </section>
-                <section class="question__3 hidden">
+                <section class="hidden" id="question__3">
                     <h2 class="text-3xl block my-10 font-bold text-gray-700">Question 3. 광고의 카테고리가 무엇인가요?</h2>
                     <div class=" border border-1 rounded border-gray-400 ">
                         <fieldset class="campaignCategory" aria-required="true">
@@ -244,7 +244,7 @@
                         </fieldset>
                     </div>
                 </section>
-                <section class="question__4 hidden">
+                <section class="hidden" id="question__4">
                     <h2 class="text-3xl block my-10 font-bold text-gray-700">Question 4. 광고 타겟팅 설정하기</h2>
                     <div class=" border border-1 rounded border-gray-400 ">
                         <div class="mb-2 border-b border-gray-300 p-5 text-xl font-bold text-gray-600">타겟팅 설정하기</div>
@@ -392,7 +392,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="question__5 hidden">
+                <section class="hidden" id="question__5">
                     <div class="flex justify-end items-center mt-4">
                         <button class="nextStep bg-blue-500 text-white font-bold text-xl py-2 px-6 rounded-xl">다음</button>
                     </div>
@@ -423,7 +423,6 @@
         <!-- //footer -->
         <!-- script -->
         <script src="../js/question.js"></script>
-        <script src="../js/local.js"></script>
         <!-- //script -->
     </body>
 </html>

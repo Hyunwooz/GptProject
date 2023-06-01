@@ -127,7 +127,7 @@ const sendQuestion = (question) => {
 const printAnswer = (answer) => {
     let textarea = document.createElement("p");
     textarea.classList =
-        "answer border border-gray-950 rounded-xl w-full h-full py-3 px-3 my-3 resize-none";
+        "answer border border-slate-300 rounded-xl w-full h-full py-3 px-3 my-3 resize-none";
     textarea.innerText = answer;
     $chatList.appendChild(textarea);
 };
