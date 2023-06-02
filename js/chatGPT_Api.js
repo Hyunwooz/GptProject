@@ -1,4 +1,4 @@
-import { createSearch_AD } from "./answer.js";
+import { createSearch_AD,createDisplay_AD,createVideo_AD } from "./answer.js";
 
 const $chatList = document.querySelector(".answerSection");
 const $input = document.querySelector(".input_question");
@@ -148,11 +148,7 @@ let data = [
     },
     {
         role: "user",
-        content: "ad_type은 디스플레이, 검색 , 쇼핑 이 세개로만 대답해줘",
-    },
-    {
-        role: "user",
-        content: "앞으로 ad_type을 바꾸지 말고 말해줘",
+        content: "ad_type은 디스플레이, 검색 , 동영상 이 세개로만 대답해줘",
     },
 ];
 
@@ -174,7 +170,7 @@ const sendQuestion = (question) => {
 };
 
 // 답변을 저장해주는 함수
-const answerSave = (answer) => {
+const answerSave = async (answer) => {
     if (data) {
         data.push({
             role: "assistant",
@@ -184,24 +180,17 @@ const answerSave = (answer) => {
 };
 
 // 화면에 답변 그려주는 함수
-const printAnswer = (answer) => {
+const printAnswer = async (answer) => {
     const gpt_answer = JSON.parse(answer);
-
     if (gpt_answer.ad_type == "디스플레이") {
-        let textarea = document.createElement("p");
-        textarea.classList =
-            "answer border border-slate-300 rounded-xl w-full h-full py-3 px-3 my-3";
-        textarea.innerText = answer;
-        $chatList.appendChild(textarea);
+        const ad = createDisplay_AD(gpt_answer);
+        $chatList.appendChild(ad);
     } else if (gpt_answer.ad_type == "검색") {
         const ad = createSearch_AD(gpt_answer);
         $chatList.appendChild(ad);
-    } else if (gpt_answer.ad_type == "쇼핑") {
-        let textarea = document.createElement("p");
-        textarea.classList =
-            "answer border border-slate-300 rounded-xl w-full h-full py-3 px-3 my-3";
-        textarea.innerText = answer;
-        $chatList.appendChild(textarea);
+    } else if (gpt_answer.ad_type == "동영상") {
+        const ad = createVideo_AD(gpt_answer);
+        $chatList.appendChild(ad);
     } else {
         alert("Error 발생")
     }
@@ -237,7 +226,6 @@ const apiPost = async () => {
         .then((res) => {
             answerSave(res.choices[0].message.content);
             printAnswer(res.choices[0].message.content);
-            
         })
         .catch((err) => {
             console.log(err);
