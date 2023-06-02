@@ -1,5 +1,4 @@
 import { createSearch_AD,createDisplay_AD,createVideo_AD } from "./answer.js";
-
 const $chatList = document.querySelector(".answerSection");
 const $input = document.querySelector(".input_question");
 const $connectBtn = document.querySelector("#connect");
