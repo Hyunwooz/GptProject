@@ -242,7 +242,12 @@ const apiPost = async () => {
 
 
 // API와 통신하는 함수
+/**
+ * @param {string} data String 타입의 Data : API에 보낼 질문
+ * @param {string} printQ String 타입 : 질문을 그릴 지에 대한 대답 "Yes" Or "No"
+ */
 const connectApi = (data,printQ) => {
+    
     sendQuestion(data);
     $loading.classList.toggle('hidden');
     apiPost();
