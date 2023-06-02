@@ -178,18 +178,24 @@ const answerSave = async (answer) => {
     }
 };
 
-// 화면에 답변 그려주는 함수
+// 화면에 광고 유형별 답변을 그려주는 함수
 const printAnswer = async (answer) => {
     const gpt_answer = JSON.parse(answer);
     if (gpt_answer.ad_type == "디스플레이") {
         const ad = createDisplay_AD(gpt_answer);
+
         $chatList.appendChild(ad);
+
     } else if (gpt_answer.ad_type == "검색") {
         const ad = createSearch_AD(gpt_answer);
+
         $chatList.appendChild(ad);
+
     } else if (gpt_answer.ad_type == "동영상") {
         const ad = createVideo_AD(gpt_answer);
+
         $chatList.appendChild(ad);
+
     } else {
         alert("Error 발생")
     }
@@ -221,53 +227,61 @@ const apiPost = async () => {
         body: JSON.stringify(data),
         redirect: "follow",
     })
-        .then((res) => res.json())
-        .then((res) => {
-            answerSave(res.choices[0].message.content);
-            printAnswer(res.choices[0].message.content);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-        $addQuestion.classList.remove("hidden");
-        $loading.classList.toggle('hidden');
+    .then((res) => res.json())
+    .then((res) => {
+        answerSave(res.choices[0].message.content);
+        printAnswer(res.choices[0].message.content);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+
+    $addQuestion.classList.remove("hidden");
+    $loading.classList.toggle('hidden');
 };
 
-// Api 와 처음 통신 !
 
-const connectApi = (event) => {
-    if (event.target.id == "connect") {
-        question = {
-            "광고 목표": gptSetting[0].newCampaignGoal,
-            "광고 유형": gptSetting[0].newCampaignType,
-            "카테고리": gptSetting[0].newCategory,
-            "메인 키워드": gptSetting[0].newKeyword,
-            "연령대": gptSetting[0].newAge,
-            "성별": gptSetting[0].newGender,
-        };
-        sendQuestion(JSON.stringify(question));
-        $loading.classList.toggle('hidden');
-        apiPost();
-    } else if (event.target.id == "disconnect") {
-        location.href = "question.html";
+// API와 통신하는 함수
+const connectApi = (data,printQ) => {
+    sendQuestion(data);
+    $loading.classList.toggle('hidden');
+    apiPost();
+
+    if (printQ == "Yes"){
+        printQuestion();
     }
 };
 
-// reconnect Api !
+// Connect Btn 클릭시 ConnectAPI와 연결해주는 함수
+const handleClickConnect = () => {
+    question = {
+        "광고 목표": gptSetting[0].newCampaignGoal,
+        "광고 유형": gptSetting[0].newCampaignType,
+        "카테고리": gptSetting[0].newCategory,
+        "메인 키워드": gptSetting[0].newKeyword,
+        "연령대": gptSetting[0].newAge,
+        "성별": gptSetting[0].newGender,
+    };
 
-const reconnectApi = (event) => {
+    connectApi(JSON.stringify(question),"No")
+}
+
+// disconnect Btn 클릭시 이전 페이지로 Render되는 함수
+const handleClickDisconnect = () => {
+    location.href = "question.html";
+}
+
+// addQuestion Submit시 event 발동을 멈추고 ConnectAPI와 연결해주는 함수
+const handleSubmit = (event) => {
     event.preventDefault();
 
     question = $input.value;
     $input.value = null;
 
-    sendQuestion(question);
-    $loading.classList.toggle('hidden');
-    apiPost();
-    printQuestion();
-};
+    connectApi(question,"Yes")
+}
 
-$connectBtn.addEventListener("click", connectApi);
-$disconnectBtn.addEventListener("click", connectApi);
-$addQuestion.addEventListener("submit", reconnectApi);
+$connectBtn.addEventListener("click", handleClickConnect);
+$disconnectBtn.addEventListener("click", handleClickDisconnect);
+$addQuestion.addEventListener("submit", handleSubmit);
 
