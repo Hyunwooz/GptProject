@@ -1,5 +1,6 @@
+.menu_Try,
 .header_title {
-    font-family: "Russo One", sans-serif;
+    font-family: "Braah One", sans-serif;
 }
 
 @keyframes spinner {
@@ -26,4 +27,27 @@
     animation: spinner 0.8s ease infinite;
     margin-left: auto;
     margin-right: auto;
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+
+#question__1,
+#question__2,
+#question__3,
+#question__4,
+#question__5 {
+    animation: fadeInLeft 0.3s;
+}
+
+#question__6 {
+    animation: fadeInLeft 0.2s;
 }

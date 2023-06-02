@@ -9,7 +9,7 @@ function createDiv(value, text) {
     const label = document.createElement("label");
     div.classList = "flex flex-col px-6 mb-2";
     label.classList = "text-xs font-bold mb-1";
-    input.classList = "border border-slate-300 rounded px-3 py-1";
+    input.classList = "border border-slate-300 rounded px-3 py-1 bg-gray-100";
 
     input.value = value.replace(/_/g,' ');
     input.readOnly = true;

@@ -14,13 +14,13 @@ export const createSearch_AD = (data) => {
     let ad_Keyword_A = document.createElement("a");
 
     search_Div.classList =
-        "border border-slate-300 rounded-xl w-4/5 h-full mx-auto py-3 px-[6rem] my-3";
+        "border border-slate-300 rounded-xl w-4/5 h-full mx-auto py-3 px-[6rem] my-3 shadow-md";
     sponser_P.innerText = "스폰서";
     sponser_P.classList = "font-bold text-sm";
 
     desc_Wrap.classList = "flex items-center mt-2";
     desc_Img.classList = "w-8 h-8 bg-gray-800 rounded-full";
-    desc_Img.setAttribute("src", "../img/search_banner.png");
+    desc_Img.setAttribute("src", "../img/sample_banner.png");
     desc_Title_Div.classList = "text-xs ml-3";
     desc_Title_P.classList = "text-sm";
     desc_Title_P.innerText = "Yout Site";
@@ -61,7 +61,7 @@ export const createDisplay_AD = (data) => {
     let ad_Arrow_icon = document.createElement("i");
 
     display_Wrap.classList =
-        "border border-slate-300 rounded-xl w-4/5 h-full mx-auto py-3 px-[2rem] my-3";
+        "border border-slate-300 rounded-xl w-4/5 h-full mx-auto py-3 px-[2rem] my-3 shadow-md";
     display_Div.classList = "border-2 border-gray-600"
     ad_wrap.classList = "flex items-center bg-white p-3 pb-5 mx-auto justify-center items-center";
     ad_banner.classList = "w-[5.5rem] h-[5.5rem] bg-gray-800 mr-6";
@@ -74,7 +74,7 @@ export const createDisplay_AD = (data) => {
     ad_Arrow_icon.classList = "fa-solid fa-chevron-right text-white text-4xl"
     
     diplay_Img.setAttribute("src", "../img/sample.png")
-    ad_banner.setAttribute("src", "../img/search_banner.png");
+    ad_banner.setAttribute("src", "../img/sample_banner.png");
     ad_Div.append(ad_Title_A,ad_Desc_P)
     ad_Arrow.append(ad_Arrow_icon)
     ad_wrap.append(ad_banner,ad_Div,ad_Arrow)
@@ -108,7 +108,7 @@ export const createVideo_AD = (data) => {
     let recommand_title = document.createElement("p");
     let recommand_Desc = document.createElement("p");
     
-    video_Wrap.classList = "border border-slate-300 rounded-xl w-full h-full mx-auto py-3 px-[2rem] my-3"
+    video_Wrap.classList = "border border-slate-300 rounded-xl w-full h-full mx-auto py-3 px-[2rem] my-3 shadow-md"
     video_Div.classList = "p-4 bg-black"
     video_Display_Div.classList ="relative"
     video_Display_Img.setAttribute("src", "../img/sample.png")
@@ -118,7 +118,7 @@ export const createVideo_AD = (data) => {
 
     video_Display_Ad.classList = "absolute left-0 bottom-6 flex w-[38%] h-14 items-center bg-white opacity-90 text-xl p-2"
     video_Display_Ad_Img.classList = "w-12 h-12 bg-gray-800 border border-slate-300"
-    video_Display_Ad_Img.setAttribute("src", "../img/search_banner.png");
+    video_Display_Ad_Img.setAttribute("src", "../img/sample_banner.png");
     video_Display_Ad_desc.classList = "flex flex-col ml-2 w-2/3"
     video_Display_Ad_Title.classList = "text-[0.7rem] font-bold text-gray-800 mb-[-0.5rem]"
     video_Display_Ad_Title.setAttribute("href","#")
