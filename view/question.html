@@ -24,7 +24,7 @@
         <!-- header -->
         <header>
             <nav
-                class="mx-auto max-w-container z-50 px-4 sm:px-6 lg:px-8 fixed top-0 left-0 right-0 text-blue-500 bg-[#2b2f35]"
+                class="mx-auto max-w-container z-10 px-4 sm:px-6 lg:px-8 fixed top-0 left-0 right-0 text-blue-500 bg-[#2b2f35]"
             >
                 <div
                     class="flex flex-col justify-between lg:items-center py-2 px-2 lg:flex lg:flex-row lg:px-[10rem] lg:py-[2.125rem]"
@@ -115,7 +115,7 @@
                         <fieldset class="campaignType" required>
                             <div class="mb-2 border-b border-gray-300 p-5 text-xl font-bold text-gray-600 flex justify-between">
                                 <p>유형 선택하기</p>
-                                </p><a href="#" class="md_open block w-6 h-6 border border-blue-700 flex justify-center items-center rounded-full text-blue-700 font-bold" ><i class="fa-solid fa-question text-sm"></i></a>
+                                </p><a href="#" title="광고의 유형이 궁금하신가요? 눌러보세요!" class="md_open block w-6 h-6 border border-blue-700 flex justify-center items-center rounded-full text-blue-700 font-bold" ><i class="fa-solid fa-question text-sm"></i></a>
                             </div>
                             <div class="p-5 grid grid-rows-3 lg:grid-rows-1 grid-flow-col gap-x-[30px] gap-y-5">
                                 <div class="relative">
@@ -353,8 +353,8 @@
         <!-- //footer -->
         
         <!-- modal -->
-        <div class="modal hidden w-full h-full fixed top-0 left-0 flex justify-center items-center bg-black/[.50]">
-            <div class="md_wrap w-[90%] h-1/2 md:h-2/3 md:w-2/3 lg:w-1/2 lg:h-2/3 p-8 pt-10 lg:mt-10 bg-white rounded-lg shadow-lg flex flex-col justify-center items-center">
+        <div class="modal hidden w-full h-full fixed top-0 left-0 z-20 flex justify-center items-center bg-black/[.50]">
+            <div class="md_wrap w-[90%] h-1/2 md:h-2/3 md:w-2/3 lg:w-1/2 lg:h-[90%] p-8 pt-10 lg:mt-10 bg-white rounded-lg shadow-lg flex flex-col justify-center items-center relative">
                 <div class="md_content text-center overflow-auto">
                     <div class="explanation_Search">
                         <p class="text-2xl font-bold">Search AD</p>
@@ -378,20 +378,23 @@
                         <img class="mt-5 mx-auto" src="../img/video_sample.png" alt="">
                     </div>
                 </div>
-                <div class="flex justify-center items-center mx-auto w-2/3">
-                    <button class="show_search bg-blue-400 mt-8 w-3 h-3 flex justify-center items-center rounded-full">
-                    </button>
-                    <button class="show_display bg-gray-400 mx-5 mt-8 w-3 h-3 flex justify-center items-center rounded-full">
-                    </button>
-                    <button class="show_video bg-gray-400 mt-8 w-3 h-3 flex justify-center items-center rounded-full">
-                    </button>
+                <div class="md_circle flex justify-center items-center mx-auto w-2/3">
+                    <div class="show_search bg-blue-400 mt-8 w-3 h-3 flex justify-center items-center rounded-full">
+                    </div>
+                    <div class="show_display bg-gray-400 mx-5 mt-8 w-3 h-3 flex justify-center items-center rounded-full">
+                    </div>
+                    <div class="show_video bg-gray-400 mt-8 w-3 h-3 flex justify-center items-center rounded-full">
+                    </div>
                 </div>
-                <button class="md_close mt-4 bg-blue-400 text-white font-bold px-4 py-1 rounded-lg text-lg">close</button>
+                <button class="md_close absolute top-2 right-2 bg-blue-400 text-white font-bold w-5 h-5 rounded-md text-xs">X</button>
+                <button class="md_next absolute right-5 lg:right-10 text-blue-500 font-bold text-2xl md:text-4xl lg:text-5xl"><i class="fa-solid fa-chevron-right"></i></button>
+                <button class="md_prev absolute left-5 lg:left-10 text-blue-500 font-bold text-2xl md:text-4xl lg:text-5xl"><i class="fa-solid fa-chevron-left"></i></button>
             </div>
         </div>
         <!-- //modal -->
         <script src="../js/menu.js"></script>
         <script src="../js/question.js"></script>
         <script src="../js/modal.js"></script>
+        <script src="../js/slide.js"></script>
     </body>
 </html>

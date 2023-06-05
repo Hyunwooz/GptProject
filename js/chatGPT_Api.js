@@ -13,7 +13,7 @@ let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 let question;
 
 // 질문과 답변 저장
-let data = [
+const data = [
     {
         role: "system",
         content: "assistant는 유능한 광고 콘텐츠 제작자이다.",
