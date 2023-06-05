@@ -5,24 +5,25 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>AgAs - Setting</title>
-        <!-- js -->
-        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
         <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Braah+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css/style.css" />
+        <!-- js -->
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body class="bg-gray-100">
         <!-- header -->
-        <header class="relative z-50 w-full flex-none leading-6 ">
-            <nav aria-label="Global" class="mx-auto max-w-container px-4 sm:px-6 lg:px-8 fixed top-0 left-0 right-0 text-blue-500 bg-[#2b2f35]">
+        <header class="w-full flex-none leading-6 ">
+            <nav aria-label="Global" class="mx-auto max-w-container px-4 sm:px-6 lg:px-8 text-blue-500 bg-[#2b2f35]">
                 <div class="relative flex items-center px-[10rem] py-[2.125rem]">
                     <a class="header_title mr-auto text-end justify-center text-6xl" href="../index.html">
                         AgAs
@@ -36,13 +37,15 @@
             </nav>
         </header>
         <!-- // header -->
-        <main class="min-h-screen w-3/6 py-10 mx-auto pt-[15rem]">
+        <main class="min-h-screen w-3/6 py-10 mx-auto pt-[7rem]">
             <form method="post">
                 <section id="question__1">
                     <h2 class="text-2xl block my-10 font-bold text-gray-700">Question 1. 광고의 목표가 무엇인가요?</h2>
                     <div class=" border border-1 rounded border-slate-300 shadow-lg">
                         <fieldset class="campaignGoal">
-                            <div class="mb-2 border-b border-gray-300 p-5 text-xl font-bold text-gray-600">목표 선택하기</div>
+                            <div class="mb-2 border-b border-gray-300 p-5 text-xl font-bold text-gray-600">목표 선택하기
+                                
+                            </div>
                             <div class="p-5 grid grid-rows-3 lg:grid-rows-1 grid-flow-col gap-x-[30px] gap-y-5">
                                 <div class="relative">
                                     <label for="판매" >
@@ -82,7 +85,10 @@
                     <h2 class="text-2xl block my-10 font-bold text-gray-700">Question 2. 광고의 유형은 무엇인가요?</h2>
                     <div class=" border border-1 rounded border-slate-300 shadow-lg">
                         <fieldset class="campaignType" required>
-                            <div class="mb-2 border-b border-gray-300 p-5 text-xl font-bold text-gray-600">유형 선택하기</div>
+                            <div class="mb-2 border-b border-gray-300 p-5 text-xl font-bold text-gray-600 flex justify-between">
+                                <p>유형 선택하기</p>
+                                </p><a href="#" class="md_open block w-6 h-6 border border-blue-700 flex justify-center items-center rounded-full text-blue-700 font-bold" ><i class="fa-solid fa-question text-sm"></i></a>
+                            </div>
                             <div class="p-5 grid grid-rows-3 lg:grid-rows-1 grid-flow-col gap-x-[30px] gap-y-5">
                                 <div class="relative">
                                     <label for="검색" >
@@ -299,7 +305,7 @@
             </form>
         </main>
         <!-- footer -->
-        <footer>
+        <footer class="mt-[7rem]">
             <div class="flex bg-[#2b2f35] text-blue-500 p-6 mt-auto">
                 <div class="text-2xl mr-5 pr-10 border-r border-slate-300">
                     <strong class="text-3xl">Automatically</strong>
@@ -320,6 +326,18 @@
             </div>
         </footer>
         <!-- //footer -->
+        <!-- modal -->
+        <div class="modal w-full h-full hidden fixed top-0 left-0 flex justify-center items-center bg-black/[.50]">
+            <div class="md_content p-10 bg-white text-center rounded-lg shadow-lg ">
+                <p class="text-lg">광고의 유형 설명</p>
+                <div class="modal_text">
+                    자바스크립트로 모달창을 만들어 봤습니다.
+                </div>
+                <button class="md_close mt-10 bg-blue-400 text-white font-bold px-4 py-1 rounded-lg text-lg">close</button>
+            </div>
+        </div>
+        <!-- modal -->
+        <script src="../js/modal.js"></script>
         <script src="../js/question.js"></script>
     </body>
 </html>

@@ -23,7 +23,7 @@ export const createSearch_AD = (data) => {
     desc_Img.setAttribute("src", "../img/sample_banner.png");
     desc_Title_Div.classList = "text-xs ml-3";
     desc_Title_P.classList = "text-sm";
-    desc_Title_P.innerText = "Yout Site";
+    desc_Title_P.innerText = "Your Site";
     desc_Url_A.innerText = "https://Your_Web_Site.com";
     desc_Url_A.setAttribute("href", "#");
 
