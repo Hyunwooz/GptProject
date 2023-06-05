@@ -22,22 +22,50 @@
     </head>
     <body class="bg-gray-100">
         <!-- header -->
-        <header class="w-full flex-none leading-6 ">
-            <nav aria-label="Global" class="mx-auto max-w-container px-4 sm:px-6 lg:px-8 text-blue-500 bg-[#2b2f35]">
-                <div class="relative flex items-center px-[10rem] py-[2.125rem]">
-                    <a class="header_title mr-auto text-end justify-center text-6xl" href="../index.html">
+        <header>
+            <nav
+                class="mx-auto max-w-container z-50 px-4 sm:px-6 lg:px-8 fixed top-0 left-0 right-0 text-blue-500 bg-[#2b2f35]"
+            >
+                <div
+                    class="flex flex-col justify-between lg:items-center py-2 px-2 lg:flex lg:flex-row lg:px-[10rem] lg:py-[2.125rem]"
+                >
+                    <a
+                        class="header_title justify-center items-center text-6xl pt-3 lg:text-end lg:text-6xl lg:mr-auto"
+                        href="../index.html"
+                    >
                         AgAs
-                        <p class="text-sm pt-2">automatically generate advertising script</p>
+                        <p class="hidden lg:block text-sm lg:pt-2">
+                            automatically generate advertising script
+                        </p>
                     </a>
-                    <div class="lg:flex lg:items-center text-3xl">
-                        <a class="menu_Try ml-8 p-1 hover:bg-gray-200 hover:p-1 hover:rounded-lg hover:text-[#2b2f35]" href="question.html">Try It</a>
-                        <a class="menu_Try ml-8 p-1 hover:bg-gray-200 hover:p-1 hover:rounded-lg hover:text-[#2b2f35]" href="#">Contact</a>
-                    </div>
+
+                    <ul
+                        class="navbar__menu hidden inline-block flex-col mt-5 lg:flex lg:flex-row lg:items-center text-3xl"
+                    >
+                        <li
+                            class="mt-1 text-center lg:w-[6rem] hover:bg-blue-400 hover:p-1 hover:rounded-lg hover:text-[#fff]"
+                        >
+                            <a class="menu_Try p-1" href="question.html"
+                                >Try It</a
+                            >
+                        </li>
+                        <li
+                            class="mt-3 text-center lg:w-[9rem] lg:mt-1 hover:bg-blue-400 hover:p-1 hover:rounded-lg hover:text-[#fff]"
+                        >
+                            <a class="menu_Try p-1" href="https://github.com/Hyunwooz/OrmiProject">Docs</a>
+                        </li>
+                    </ul>
+                    <button
+                        type="button"
+                        class="navbar__toggle absolute right-3 top-4 text-blue-500 text-5xl lg:hidden"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
                 </div>
             </nav>
         </header>
         <!-- // header -->
-        <main class="min-h-screen w-3/6 py-10 mx-auto pt-[7rem]">
+        <main class="min-h-screen w-[90%] lg:w-4/6 py-10 mx-auto pt-[7rem] lg:pt-[17rem]">
             <form method="post">
                 <section id="question__1">
                     <h2 class="text-2xl block my-10 font-bold text-gray-700">Question 1. 광고의 목표가 무엇인가요?</h2>
@@ -55,7 +83,7 @@
                                             <p class="h-[7rem]">온라인, 앱, 전화, 매장을 통한 판매를 촉진합니다.</p>
                                         </div>
                                     </label>
-                                    <input class="absolute bottom-3 right-[46%] w-5 h-5" required type="radio" id="판매" name="campaignGoal" value="판매">
+                                    <input class="absolute bottom-3 right-[46%] md:right-[48.3%] lg:right-[46%] w-5 h-5" required type="radio" id="판매" name="campaignGoal" value="판매">
                                 </div>
                                 <div class="relative">
                                     <label for="잠재_고객_유치" >
@@ -65,7 +93,7 @@
                                             <p class="h-[7rem]">고객의 액션을 유도하여 리드 및 다른 전환를 늘립니다.</p>
                                         </div>
                                     </label>
-                                    <input class="absolute bottom-3 right-[46%] w-5 h-5" type="radio" id="잠재_고객_유치" name="campaignGoal" value="잠재_고객_유치">
+                                    <input class="absolute bottom-3 right-[46%] md:right-[48.3%] lg:right-[46%] w-5 h-5" type="radio" id="잠재_고객_유치" name="campaignGoal" value="잠재_고객_유치">
                                 </div>
                                 <div class="relative">
                                     <label for="웹사이트_트래픽" >
@@ -75,7 +103,7 @@
                                             <p class="h-[7rem]">관련성이 높은 사용자가 웹사이트를 방문하도록 유도합니다.</p>
                                         </div>
                                     </label>
-                                    <input class="absolute bottom-3 right-[46%] w-5 h-5" type="radio" id="웹사이트_트래픽" name="campaignGoal" value="웹사이트_트래픽">
+                                    <input class="absolute bottom-3 right-[46%] md:right-[48.3%] lg:right-[46%] w-5 h-5" type="radio" id="웹사이트_트래픽" name="campaignGoal" value="웹사이트_트래픽">
                                 </div>                         
                             </div>
                         </fieldset>
@@ -98,7 +126,7 @@
                                             <p class="h-[7rem]">검색에서 구매 의도가 높은 고객에게 노출합니다.</p>
                                         </div>
                                     </label>
-                                    <input class="absolute bottom-3 right-[46%] w-5 h-5" required type="radio" id="검색" name="campaignType" value="검색">
+                                    <input class="absolute bottom-3 right-[46%] md:right-[48.3%] lg:right-[46%] w-5 h-5" required type="radio" id="검색" name="campaignType" value="검색">
                                 </div>
                                 <div class="relative">
                                     <label for="디스플레이" >
@@ -108,7 +136,7 @@
                                             <p class="h-[7rem]">눈에 잘 띄는 광고 소재로 사이트와 앱을 통해 고객에게 도달합니다.</p>
                                         </div>
                                     </label>
-                                    <input class="absolute bottom-3 right-[46%] w-5 h-5" type="radio" id="디스플레이" name="campaignType" value="디스플레이">
+                                    <input class="absolute bottom-3 right-[46%] md:right-[48.3%] lg:right-[46%] w-5 h-5" type="radio" id="디스플레이" name="campaignType" value="디스플레이">
                                 </div>
                                 <div class="relative">
                                     <label for="동영상" >
@@ -118,7 +146,7 @@
                                             <p class="h-[7rem]">Youtube 시청자에게 도달하여 전환을 늘립니다.</p>
                                         </div>
                                     </label>
-                                    <input class="absolute bottom-3 right-[46%] w-5 h-5" type="radio" id="동영상" name="campaignType" value="동영상">
+                                    <input class="absolute bottom-3 right-[46%] md:right-[48.3%] lg:right-[46%] w-5 h-5" type="radio" id="동영상" name="campaignType" value="동영상">
                                 </div>                        
                             </div>
                         </fieldset>
@@ -129,7 +157,7 @@
                     <div class=" border border-1 rounded border-slate-300 shadow-lg">
                         <fieldset class="campaignCategory" aria-required="true">
                             <div class="mb-2 border-b border-gray-300 p-5 text-xl font-bold text-gray-600">카테고리 선택하기</div>
-                            <div class="p-5 grid grid-rows-6 grid-flow-col gap-x-[80px] gap-y-5">
+                            <div class="p-2  grid grid-rows-6 grid-flow-col gap-y-2 gap-x-1 lg:p-5 lg:gap-x-[80px] lg:gap-y-5">
                                 <div>
                                     <label for="인테리어">인테리어
                                     </label>
@@ -248,7 +276,7 @@
                                 <div>
                                     <textarea
                                         type="text"
-                                        class="campaignKeyword border border-slate-300 bg-gray-100 rounded-xl w-full py-3 pl-3 pr-[6rem] resize-none shadow-md"
+                                        class="campaignKeyword border border-slate-300 bg-gray-100 rounded-xl w-full py-3 pl-3 resize-none shadow-md"
                                         rows="1"
                                         name="keyword"
                                         required
@@ -299,20 +327,20 @@
                 </section>
                 <section class="hidden" id="question__6">
                     <div class="flex justify-center items-center mt-12">
-                        <button class=" w-1/6 nextStep bg-blue-500 text-white font-bold text-xl py-2 px-6 rounded-xl hover:bg-blue-400">Next</button>
+                        <button class="w-1/2 lg:w-1/6 nextStep bg-blue-500 text-white font-bold text-xl py-2 px-6 rounded-xl hover:bg-blue-400">Next</button>
                     </div>
                 </section>
             </form>
         </main>
         <!-- footer -->
-        <footer class="mt-[7rem]">
-            <div class="flex bg-[#2b2f35] text-blue-500 p-6 mt-auto">
-                <div class="text-2xl mr-5 pr-10 border-r border-slate-300">
+        <footer>
+            <div class="border-t border-gray-600 flex flex-col lg:flex-row bg-[#2b2f35] text-blue-500 p-6 mt-auto">
+                <div class="text-2xl mr-5 pr-10 border-slate-300 lg:border-r">
                     <strong class="text-3xl">Automatically</strong>
                     <p class="text-slate-300 mr-5">generate advertising scripts</p>
                     using <strong class="text-3xl">ChatGPT</strong>
                 </div>
-                <div class="flex justify-center items-center flex-col ml-10">
+                <div class="flex justify-center items-center flex-col mt-10 lg:mt-1 lg:ml-10">
                     <strong class="text-xl"
                         >Ormi 1기 ChatGPT 연동 프로젝트 입니다 :)</strong
                     >
@@ -320,16 +348,14 @@
                         Copyright 2023. Chilli All rights reserved.
                     </p>
                 </div>
-                <div class="ml-auto w-1/5 flex justify-center items-center">
-                    <a href="https://github.com/Hyunwooz/OrmiProject" class="flex justify-center items-center rounded-xl font-bold bg-blue-500 w-2/4 text-[#fff] h-[40px]">GitHub Repo</a>
-                </div>
             </div>
         </footer>
         <!-- //footer -->
+        
         <!-- modal -->
         <div class="modal hidden w-full h-full fixed top-0 left-0 flex justify-center items-center bg-black/[.50]">
-            <div class="md_wrap w-1/2 p-8 pt-10 bg-white rounded-lg shadow-lg flex flex-col justify-center items-center">
-                <div class="md_content text-center h-2/3">
+            <div class="md_wrap w-[90%] h-1/2 md:h-2/3 md:w-2/3 lg:w-1/2 lg:h-2/3 p-8 pt-10 lg:mt-10 bg-white rounded-lg shadow-lg flex flex-col justify-center items-center">
+                <div class="md_content text-center overflow-auto">
                     <div class="explanation_Search">
                         <p class="text-2xl font-bold">Search AD</p>
                         <p class="mt-5 w-2/3 mx-auto">
@@ -363,7 +389,8 @@
                 <button class="md_close mt-4 bg-blue-400 text-white font-bold px-4 py-1 rounded-lg text-lg">close</button>
             </div>
         </div>
-        <!-- modal -->
+        <!-- //modal -->
+        <script src="../js/menu.js"></script>
         <script src="../js/question.js"></script>
         <script src="../js/modal.js"></script>
     </body>

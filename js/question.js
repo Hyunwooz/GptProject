@@ -15,10 +15,11 @@ const nextQuestion = (event) => {
     while (curr.tagName != "SECTION") {
         curr = curr.parentNode;
     }
-
+    
     const parent = curr.id.split("__");
     const nextID = "#question__" + (parseInt(parent[1]) + 1).toString();
     const next = document.querySelector(nextID);
+
     next.classList.remove("hidden");
 };
 

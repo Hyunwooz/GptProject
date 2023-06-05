@@ -151,17 +151,10 @@ let data = [
     },
 ];
 
-// 화면에 뿌려줄 데이터, 질문들
-let questionData = [];
-
 // 사용자의 질문을 객체를 만들어서 push
 const sendQuestion = (question) => {
     if (question) {
         data.push({
-            role: "user",
-            content: question,
-        });
-        questionData.push({
             role: "user",
             content: question,
         });
@@ -202,16 +195,13 @@ const printAnswer = async (answer) => {
 };
 
 // 화면에 질문 그려주는 함수
-const printQuestion = async () => {
+const printQuestion = async (data) => {
     if (question) {
         let textarea = document.createElement("p");
         textarea.classList =
             "answer border border-slate-300 rounded-xl w-full h-full py-3 px-3 my-3 resize-none";
-        questionData.map((el) => {
-            textarea.innerText = el.content;
-        });
+        textarea.innerText = data;
         $chatList.appendChild(textarea);
-        questionData = [];
         question = false;
     }
 };
@@ -249,12 +239,13 @@ const apiPost = async () => {
 const connectApi = (data,printQ) => {
     
     sendQuestion(data);
+    if (printQ == "Yes"){
+        printQuestion(data);
+    }
     $loading.classList.toggle('hidden');
     apiPost();
 
-    if (printQ == "Yes"){
-        printQuestion();
-    }
+    
 };
 
 // Connect Btn 클릭시 ConnectAPI와 연결해주는 함수
