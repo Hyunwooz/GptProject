@@ -16,10 +16,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Braah+One&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../assets/css/style.css" />
         <!-- js -->
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="../js/chatGPT_Api.js" defer type="module"></script>
+        <script src="../assets/js/openAPI.js" defer type="module"></script>
     </head>
     <body class="bg-gray-100">
         <!-- header -->
@@ -32,7 +32,7 @@
                 >
                     <a
                         class="header_title justify-center items-center text-6xl pt-3 lg:text-end lg:text-6xl lg:mr-auto"
-                        href="../index.html"
+                        href="../../index.html"
                     >
                         AgAs
                         <p class="hidden lg:block text-sm lg:pt-2">
@@ -68,7 +68,7 @@
         <!-- // header -->
         
         <main class="min-h-screen w-[90%] lg:w-3/6 py-10 mx-auto pt-[12rem] md:pt-[13rem] lg:pt-[17rem]">
-            <section class="lg:w-2/3 mx-auto">
+            <section class="lg:w-2/3 mx-auto mb-8">
                 <div class="border border-slate-300 rounded-xl shadow-md">
                     <h2 class="my-4 text-center text-3xl font-bold text-blue-600">Check Your Setting</h2>
                     <div class="showSetting p-4"></div>
@@ -118,7 +118,8 @@
             </div>
         </footer>
         <!-- //footer -->
-        <script src="../js/menu.js"></script>
-        <script src="../js/display.js"></script>
+        <script src="../assets/js/menu.js"></script>
+        <script src="../assets/js/display.js" type="module"></script>
+        <script src="../assets/js/connect.js" type="module"></script>
     </body>
 </html>

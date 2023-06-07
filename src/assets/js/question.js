@@ -6,9 +6,13 @@ const $age = document.querySelector(".targetAge");
 const $gender = document.querySelector(".targetGender");
 const $form = document.querySelector("form");
 
+// localStorage Data 가져오기
 let gptSetting = JSON.parse(localStorage.getItem("gptSetting"));
+
+// 기존 Ddata는 없애기 
 gptSetting = [];
 
+// 다음 질문을 그려주는 함수
 const nextQuestion = (event) => {
     let curr = event.target;
 

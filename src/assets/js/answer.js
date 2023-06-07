@@ -1,4 +1,4 @@
-// 화면에 검색 광고 스크립트를 그려주는 함수
+// 화면에 검색 광고 스크립트를 그려주는 함수img
 export const createSearch_AD = (data) => {
 
     let search_Div = document.createElement("div");
@@ -20,7 +20,7 @@ export const createSearch_AD = (data) => {
 
     desc_Wrap.classList = "flex items-center mt-2";
     desc_Img.classList = "w-8 h-8 bg-gray-800 rounded-full";
-    desc_Img.setAttribute("src", "../img/sample_banner.png");
+    desc_Img.setAttribute("src", "../assets/img/sample_banner.png");
     desc_Title_Div.classList = "text-xs ml-3";
     desc_Title_P.classList = "text-sm";
     desc_Title_P.innerText = "Your Site";
@@ -73,8 +73,8 @@ export const createDisplay_AD = (data) => {
     ad_Arrow.classList = "w-6 h-6 ml-1 bg-blue-600 rounded-full flex justify-center items-center md:w-[3rem] md:h-[3rem] md:ml-3 lg:w-[3.5rem] lg:h-[3.5rem]"
     ad_Arrow_icon.classList = "fa-solid fa-chevron-right text-white text-md md:text-xl lg:text-4xl"
     
-    diplay_Img.setAttribute("src", "../img/sample.png")
-    ad_banner.setAttribute("src", "../img/sample_banner.png");
+    diplay_Img.setAttribute("src", "../assets/img/sample.png")
+    ad_banner.setAttribute("src", "../assets/img/sample_banner.png");
     ad_Div.append(ad_Title_A,ad_Desc_P)
     ad_Arrow.append(ad_Arrow_icon)
     ad_wrap.append(ad_banner,ad_Div,ad_Arrow)
@@ -112,14 +112,14 @@ export const createVideo_AD = (data) => {
     video_Wrap.classList = "border border-slate-300 rounded-xl w-full h-full mx-auto py-3 px-3 lg:px-[2rem] my-3 shadow-md"
     video_Div.classList = "p-4 bg-black"
     video_Display_Div.classList ="relative"
-    video_Display_Img.setAttribute("src", "../img/sample.png")
+    video_Display_Img.setAttribute("src", "../assets/img/sample.png")
 
     video_Display_Skip.classList = "absolute right-0 bottom-7 lg:bottom-8 flex w-1/5 lg:w-1/6 h-8 lg:h-10 justify-center items-center bg-black opacity-70 text-sm lg:text-xl text-white"
     video_Display_Skip.innerText = "Skip ad"
 
     video_Display_Ad.classList = "absolute left-0 bottom-6 flex w-[50%] md:w-[38%] h-10 md:h-14 items-center bg-white opacity-90 text-xl p-2"
     video_Display_Ad_Img.classList = "w-7 h-7 lg:w-12 lg:h-12 bg-gray-800 border border-slate-300"
-    video_Display_Ad_Img.setAttribute("src", "../img/sample_banner.png");
+    video_Display_Ad_Img.setAttribute("src", "../assets/img/sample_banner.png");
     video_Display_Ad_desc.classList = "flex flex-col ml-2 w-2/3"
     video_Display_Ad_Title.classList = "text-[0.3rem] md:text-[1rem] font-bold text-gray-800 mb-[-0.5rem]"
     video_Display_Ad_Title.setAttribute("href","#")

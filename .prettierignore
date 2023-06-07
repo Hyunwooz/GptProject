@@ -1,4 +1,3 @@
-view/*.html
-js/*.js
+src/assets/view/*.html
+src/assets/js/*.js
 index.html
-modal.html
