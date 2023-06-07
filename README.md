@@ -8,9 +8,9 @@
 
 ## 사용 기술
 
--   tailwind Css
--   Vanila Js
--   Html
+-   tailwind CSS
+-   바닐라 JS
+-   HTML
 -   chatGPT API
 
 ## 필요한 정보 수집 ( 해당 정보는 Google Ads를 표준으로 삼았습니다.)
@@ -61,6 +61,10 @@
 
     - 나이
     - 성별
+
+## 수정 예정
+
+1. answer.js 주석 달기
 
 ## 업데이트 기능
 

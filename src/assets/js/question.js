@@ -1,3 +1,5 @@
+import { ages, categories, genders } from "./data.js";
+
 const $campaignGoal = document.querySelector(".campaignGoal");
 const $campaignType = document.querySelector(".campaignType");
 const $category = document.querySelector(".campaignCategory");
@@ -5,6 +7,7 @@ const $keyword = document.querySelector(".campaignKeyword");
 const $age = document.querySelector(".targetAge");
 const $gender = document.querySelector(".targetGender");
 const $form = document.querySelector("form");
+const $campaignCategoryDiv = document.querySelector('.campaignCategoryValue')
 
 // 질문의 진행률을 보여주는 함수
 const quetsionProgress = (data) => {
@@ -32,6 +35,56 @@ const nextQuestion = (event) => {
     quetsionProgress(parseInt(parent[1]))
     next.classList.remove("hidden");
 };
+
+// category에 들어갈 label과 input의 attribute를 세팅 해주는 함수
+const addCategory = (data) => {
+    const div = document.createElement('div')
+    const label = document.createElement('label')
+    const input = document.createElement('input')
+
+    // label Attribute Setting
+    label.innerText = data
+    label.classList = 'mr-2'
+    label.setAttribute('for',data)
+
+    // input Attribute Setting
+    input.name = 'campaignCategory'
+    input.id = data
+    input.value = data
+    input.type = 'radio'
+    input.required = true
+
+    div.append(label,input)    
+
+    return div
+};
+
+// option의 attribute를 세팅 해주는 함수
+const addOption = (data) => {
+    const option = document.createElement('option')
+    option.value = data
+    option.innerText = data
+
+    return option
+};
+
+// 카테고리 Element 넣기
+categories.forEach((data) => {
+    const el = addCategory(data)
+    $campaignCategoryDiv.append(el)
+});
+
+// 성별 option Element 넣기
+genders.forEach((data) => {
+    const option = addOption(data)
+    $gender.append(option)
+});
+
+// 나이 option Element 넣기
+ages.forEach((data) => {
+    const option = addOption(data)
+    $age.append(option)
+});
 
 [...$campaignGoal.querySelectorAll("input")].forEach((btn) => {
     btn.addEventListener("click", nextQuestion);
