@@ -6,12 +6,6 @@ const $age = document.querySelector(".targetAge");
 const $gender = document.querySelector(".targetGender");
 const $form = document.querySelector("form");
 
-// localStorage Data 가져오기
-let gptSetting = JSON.parse(localStorage.getItem("gptSetting"));
-
-// 기존 Data는 없애기 
-gptSetting = [];
-
 // 질문의 진행률을 보여주는 함수
 const quetsionProgress = (data) => {
     const progress = document.querySelector('.progress_bar')
@@ -58,12 +52,11 @@ $age.addEventListener("change", nextQuestion);
 $form.addEventListener("submit", (e) => {
     e.preventDefault();
 
+    const gptSetting = [];
+
     let newCampaignGoal,
         newCampaignType,
-        newCategory,
-        newKeyword,
-        newAge,
-        newGender;
+        newCategory
 
     // 광고 목표의 Checked된 벨류값 가져오기
     [...$campaignGoal.querySelectorAll("input")].forEach((e) => {
@@ -87,9 +80,9 @@ $form.addEventListener("submit", (e) => {
     });
 
     // 각 질문에 대한 벨류값 가져오기
-    newKeyword = $keyword.value;
-    newAge = $age.value;
-    newGender = $gender.value;
+    const newKeyword = $keyword.value;
+    const newAge = $age.value;
+    const newGender = $gender.value;
 
     // gptSetting array에 Push
     gptSetting.push({
