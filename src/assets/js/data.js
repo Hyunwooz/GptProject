@@ -78,6 +78,11 @@ export const data = [
             "광고의 제목 , 설명을 만들어주고, 답변을 Json 형식으로 해줘 설명은 30자이상으로 해주고 메인 키워드와 관련된 추천 키워드 3개와 현재 광고 유형을 알려줘.",
     },
     {
+        role: "user",
+        content:
+            "앞으로 대답은 무조건 한국어로 해줘",
+    },
+    {
         role: "assistant",
         content: JSON.stringify({
             ad_title: "광고 제목",
