@@ -7,7 +7,7 @@ gptSetting = gptSetting ?? [];
 
 render();
 
-// gptSetting에 저장되어 있는 질문에 대한 답을 보여주는 함수.
+// gptSetting에 저장되어 있는 질문을 보여주는 함수.
 function render() {
     const show = document.querySelector(".showSetting");
     const goal = createDiv(gptSetting[0].newCampaignGoal, "광고 목표");
@@ -20,7 +20,7 @@ function render() {
     show.append(goal, type, category, keyword, gender, age);
 }
 
-// 기초 QnA를 그려주는 함수
+// 기초 질문틀을 만들어주는 함수
 function createDiv(value, text) {
     const div = document.createElement("div");
     const input = document.createElement("input");

@@ -9,7 +9,7 @@ const $form = document.querySelector("form");
 // localStorage Data 가져오기
 let gptSetting = JSON.parse(localStorage.getItem("gptSetting"));
 
-// 기존 Ddata는 없애기 
+// 기존 Data는 없애기 
 gptSetting = [];
 
 // 질문의 진행률을 보여주는 함수
@@ -65,28 +65,33 @@ $form.addEventListener("submit", (e) => {
         newAge,
         newGender;
 
+    // 광고 목표의 Checked된 벨류값 가져오기
     [...$campaignGoal.querySelectorAll("input")].forEach((e) => {
         if (e.checked) {
             newCampaignGoal = e.value;
         }
     });
 
+    // 광고 유형의 Checked된 벨류값 가져오기
     [...$campaignType.querySelectorAll("input")].forEach((e) => {
         if (e.checked) {
             newCampaignType = e.value;
         }
     });
 
+    // 광고 카테고리의 Checked된 벨류값 가져오기
     [...$category.querySelectorAll("input")].forEach((e) => {
         if (e.checked) {
             newCategory = e.value;
         }
     });
 
+    // 각 질문에 대한 벨류값 가져오기
     newKeyword = $keyword.value;
     newAge = $age.value;
     newGender = $gender.value;
 
+    // gptSetting array에 Push
     gptSetting.push({
         newCampaignGoal,
         newCampaignType,

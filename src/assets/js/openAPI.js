@@ -26,7 +26,7 @@ const apiPost = async () => {
             console.log(err);
         });
 
-    // 로딩스피너 숨기기
+    // 로딩이 완료된 후 스피너 숨기기
     $loading.classList.toggle("hidden");
 
     // 로딩이 끝난 후 addQuestion 활성화
@@ -35,7 +35,7 @@ const apiPost = async () => {
 };
 
 // 사용자의 질문을 저장해주는 함수
-const sendQuestion = (question) => {
+const questionSave = (question) => {
     if (data) {
         data.push({
             role: "user",
@@ -60,7 +60,7 @@ const answerSave = async (answer) => {
  * @param {string} printQ String 타입 : 질문을 그릴 지에 대한 대답 "Yes" Or "No"
  */
 export const connectApi = (data, printQ) => {
-    sendQuestion(data);
+    questionSave(data);
 
     if (printQ == "Yes") {
         printQuestion(data);

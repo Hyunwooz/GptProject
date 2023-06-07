@@ -21,8 +21,8 @@ const handleClickConnect = () => {
         "성별": gptSetting[0].newGender,
     };
 
-    // 추가 질문창 오픈
-    $addQuestion.classList.toggle("hidden");
+    // 추가 질문창 hidden 제거
+    $addQuestion.classList.remove("hidden");
 
     connectApi(JSON.stringify(question),"No")
 }
