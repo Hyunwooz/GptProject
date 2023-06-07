@@ -12,6 +12,17 @@ let gptSetting = JSON.parse(localStorage.getItem("gptSetting"));
 // 기존 Ddata는 없애기 
 gptSetting = [];
 
+// 질문의 진행률을 보여주는 함수
+const quetsionProgress = (data) => {
+    const progress = document.querySelector('.progress_bar')
+    const old_Progress = "w-"+(data - 1).toString()+"/5"
+    const curr_Progress = "w-"+data.toString()+"/5"
+
+    progress.classList.remove("hidden")
+    progress.classList.remove(old_Progress)
+    progress.classList.add(curr_Progress)
+}
+
 // 다음 질문을 그려주는 함수
 const nextQuestion = (event) => {
     let curr = event.target;
@@ -24,6 +35,7 @@ const nextQuestion = (event) => {
     const nextID = "#question__" + (parseInt(parent[1]) + 1).toString();
     const next = document.querySelector(nextID);
 
+    quetsionProgress(parseInt(parent[1]))
     next.classList.remove("hidden");
 };
 
