@@ -1,3 +1,4 @@
 src/view/*.html
 src/assets/js/*.js
 index.html
+*.md

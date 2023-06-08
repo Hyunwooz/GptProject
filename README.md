@@ -1,7 +1,6 @@
 # OrmiProject
 
 -   이스트소프트 백엔드 스쿨 오르미1기 첫번째 개인 프로젝트 Repo입니다.
--
 
 ## 1. 목표와 기능
 
@@ -27,38 +26,34 @@
 
 OrmiProject
 | index.html
-\---src
-+---assets
-| +---css
-| | style.css
-| |  
- | +---img
-| | Chat-1.png
-| | Chat-2.png
-| | display_sample.png
-| | sample.png
-| | sample_banner.png
-| | search_sample.png
-| | video_sample.png
-| |  
- | +---js
-| | answer.js
-| | connect.js
-| | data.js
-| | display.js
-| | menu.js
-| | modal.js
-| | openAPI.js
-| | question.js
-| | sectionScroll.js
-| | slide.js
-| |  
- | \---video
-| sample.mp4
-|  
- \---view
-question.html
-service.html
+|---src
+|   ㄴ---assets
+|       ㄴ---css
+| |         ㄴ---style.css
+|       ㄴ---img
+| |         ㄴ---Chat-1.png
+| |         ㄴ---Chat-2.png
+| |         ㄴ---display_sample.png
+| |         ㄴ---sample.png
+| |         ㄴ---sample_banner.png
+| |         ㄴ---search_sample.png
+| |         ㄴ---video_sample.png
+|       ㄴ---js
+| |         ㄴ---answer.js
+| |         ㄴ---connect.js
+| |         ㄴ---data.js
+| |         ㄴ---display.js
+| |         ㄴ---menu.js
+| |         ㄴ---modal.js
+| |         ㄴ---openAPI.js
+| |         ㄴ---question.js
+| |         ㄴ---sectionScroll.js
+| |         ㄴ---slide.js
+|       ㄴ---video
+|           ㄴ---sample.mp4
+|   ㄴ---view
+|       ㄴ---question.html
+|       ㄴ---service.html
 
 ### 3.2 개발 일정
 
@@ -81,7 +76,7 @@ service.html
     ![UI](https://github.com/Hyunwooz/OrmiProject/assets/107661525/50bfb928-f579-4656-9585-dd72aa46bc7a)
 
 -   메인 기능
-    ![sample](https://github.com/Hyunwooz/OrmiProject/assets/107661525/3f7a5d78-089c-47f0-8643-d3274bbe5271)
+    ![sample](https://github.com/Hyunwooz/OrmiProject/assets/107661525/3f7a5d78-089c-47f0-8643-d3274bbe5271){: width="50%" height="50%"}
 
 ## 6. 메인 기능
 
