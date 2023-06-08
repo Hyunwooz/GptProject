@@ -98,7 +98,7 @@ ages.forEach((data) => {
     btn.addEventListener("click", nextQuestion);
 });
 
-$keyword.addEventListener("change", nextQuestion);
+$keyword.addEventListener("input", nextQuestion);
 $age.addEventListener("change", nextQuestion);
 
 // Next 버튼 클릭시
