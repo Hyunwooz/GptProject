@@ -1,6 +1,6 @@
 # OrmiProject
 
--   이스트소프트 백엔드 스쿨 오르미1기 첫번째 개인 프로젝트 Repo입니다.
+-   ChatGPT를 이용한 개인 프로젝트 Repo입니다.
 
 ## 1. 목표와 기능
 
@@ -20,6 +20,10 @@
 -   서비스 배포 환경
     -   GitHub Page
 
+### 2.2 배포 URL
+
+-   https://hyunwooz.github.io/OrmiProject/
+
 ## 3. 프로젝트 구조와 개발 일정
 
 ### 3.1 프로젝트 구조
@@ -29,6 +33,8 @@
 ### 3.2 개발 일정
 
 #### 개발 일정
+
+2023.05.31 ~ ing
 
 #### 기술 스택
 
@@ -46,11 +52,13 @@
 -   전체 페이지 UI
     ![UI](https://github.com/Hyunwooz/OrmiProject/assets/107661525/50bfb928-f579-4656-9585-dd72aa46bc7a)
 
--   메인 기능
+-   ChatGpt API와 통신 후 사용자의 질문에 대한 답을 그려주는 기능
     ![sample](https://github.com/Hyunwooz/OrmiProject/assets/107661525/3f7a5d78-089c-47f0-8643-d3274bbe5271)
 
 ## 6. 메인 기능
 
-## 7. 추가 기능
+-   chatGPT API 를 이용한 광고 스크립트를 자동 생성
+-   광고의 유형별 다른 템플릿으로 답변을 제공 합니다.
+-   추가 요청사항을 ChatGpt에게 요청할 수 있습니다.
 
-## 8. 개발하며 느낀점
+## 7. 개발하며 느낀점
