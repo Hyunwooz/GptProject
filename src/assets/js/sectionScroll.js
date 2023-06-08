@@ -32,17 +32,17 @@ const scrollMoveToEl = (e) => {
         page -= 1
     };
 
-    let $curr;
+    let curr;
     const name = '#section'
     const section = name + page.toString()
 
     if (page == 4) {
-        $curr = document.querySelector('footer')
+        curr = document.querySelector('footer')
     } else {
-        $curr = document.querySelector(section)
+        curr = document.querySelector(section)
     }
 
-    $curr.scrollIntoView({behavior: "smooth", block: "start"});
+    curr.scrollIntoView({behavior: "smooth", block: "start"});
 }
 
 // 스크롤 이벤트 정지
@@ -51,8 +51,3 @@ window.addEventListener("wheel", function(e){
 },{passive : false});
 
 window.addEventListener('wheel',eventDelay(scrollMoveToEl, 350))
-
-
-
-
-
