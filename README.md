@@ -1,94 +1,90 @@
 # OrmiProject
 
-이스트소프트 백엔드 스쿨 오르미1기 첫번째 개인 프로젝트 Repo입니다.
+-   이스트소프트 백엔드 스쿨 오르미1기 첫번째 개인 프로젝트 Repo입니다.
+-
 
-## ChatGPT를 이용한 광고 스크립트 자동생성 서비스
+## 1. 목표와 기능
 
-유능한 AI인 chatGPT를 이용해서 광고 스크립트를 자동으로 만들어 보세요!
+### 1.1 목표
 
-## 사용 기술
+-   ChatGPT를 이용하여 업무의 생산성을 높일 수 있는 서비스
+
+### 1.2 기능
+
+-   chatGPT API 를 이용해서 광고 스크립트를 자동 생성
+-   광고의 유형별 다른 템플릿으로 답변 제공
+
+## 2. 개발 환경 및 배포 URL
+
+### 2.1 개발 환경
+
+-   서비스 배포 환경
+    -   GitHub Page
+
+## 3. 프로젝트 구조와 개발 일정
+
+### 3.1 프로젝트 구조
+
+OrmiProject
+| index.html
+\---src
++---assets
+| +---css
+| | style.css
+| |  
+ | +---img
+| | Chat-1.png
+| | Chat-2.png
+| | display_sample.png
+| | sample.png
+| | sample_banner.png
+| | search_sample.png
+| | video_sample.png
+| |  
+ | +---js
+| | answer.js
+| | connect.js
+| | data.js
+| | display.js
+| | menu.js
+| | modal.js
+| | openAPI.js
+| | question.js
+| | sectionScroll.js
+| | slide.js
+| |  
+ | \---video
+| sample.mp4
+|  
+ \---view
+question.html
+service.html
+
+### 3.2 개발 일정
+
+#### 개발 일정
+
+#### 기술 스택
 
 -   tailwind CSS
 -   바닐라 JS
 -   HTML
 -   chatGPT API
 
-## 필요한 정보 수집 ( 해당 정보는 Google Ads를 표준으로 삼았습니다.)
+## 4. 역할
 
-1. 광고 캠페인 목표
+-   개인 프로젝트
 
-    - 판매
-    - 리드
-    - 웹사이트 트래픽
-    - ~~앱 프로모션~~ (삭제)
+## 5. UI
 
-2. 캠페인 유형
+-   전체 페이지 UI
+    ![UI](https://github.com/Hyunwooz/OrmiProject/assets/107661525/50bfb928-f579-4656-9585-dd72aa46bc7a)
 
-    - 검색
-    - 디스플레이
-    - 쇼핑
+-   메인 기능
+    ![sample](https://github.com/Hyunwooz/OrmiProject/assets/107661525/3f7a5d78-089c-47f0-8643-d3274bbe5271)
 
-3. 카테고리
+## 6. 메인 기능
 
-    - 인테리어
-    - 컴퓨터
-    - 취미
-    - 사회
-    - 교육
-    - 자동차
-    - 예술
-    - 인터넷
-    - ~~온라인 커뮤니티~~ (삭제)
-    - 여행
-    - 애완동물
-    - 식음료
-    - 스포츠
-    - ~~쇼핑~~ (삭제)
-    - ~~사법 기관, 정부 기관~~ (삭제)
-    - 비즈니스
-    - 부동산
-    - 미용
-    - 도서
-    - 뉴스
-    - 금융
-    - 과학
-    - 게임
-    - 건강
+## 7. 추가 기능
 
-4. 세부 키워드 입력
-
-5. 타겟팅 목표 설정
-
-    - 나이
-    - 성별
-
-## 수정 예정
-
-1. answer.js 주석 달기
-2. index에 스크롤 이벤트 > 스크롤 내릴 때마다 100%를 차지한 화면으로 바뀌게 하기.
-
-## 이슈
-
-### 크롬에서 Video Autoplay가 안되는 이유.
-
-참고 링크: https://developer.chrome.com/blog/autoplay/
-
-2018년 구글에서 Autoplay Policy를 재정의 했다.
-
-SNS 및 여러 포스팅이 활발해 짐에 따라 용량이 큰 동영상 재생등이 사용자가 원치않는 리소스를 가져간다고 판단하여 브라우저에서 막아버렸다.
-
-### 해결 방법
-
-Video에 Muted 속성 추가
-
-## 업데이트 기능
-
-1. 기존 답변 저장 후 , 수정 사항 새로 요청하는 기능
-2. API 답변 Loading Progress Bar 구현하기. 단순 CSS로 구현
-3. 질문지 목표 > 유형 > 카테고리> 키워드 > 타겟팅 순으로 보여주기
-4. 광고 타겟팅 설정 유연성 증가(?) -> 키워드 입력폼 추가로 해결
-5. localStorage 활용
-6. 광고의 유형별 다른 템플릿으로 답변 제공
-7. 반응형 웹 CSS 추가
-8. 광고 유형에 대한 설명 모달창 추가
-9. 광고 유형 설명창 , 슬라이드 기능 추가
+## 8. 개발하며 느낀점
