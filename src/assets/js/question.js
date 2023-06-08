@@ -1,4 +1,5 @@
 import { ages, categories, genders } from "./data.js";
+import { debouncing } from "./util.js";
 
 const $campaignGoal = document.querySelector(".campaignGoal");
 const $campaignType = document.querySelector(".campaignType");
@@ -98,7 +99,7 @@ ages.forEach((data) => {
     btn.addEventListener("click", nextQuestion);
 });
 
-$keyword.addEventListener("input", nextQuestion);
+$keyword.addEventListener("input", debouncing(nextQuestion,350));
 $age.addEventListener("change", nextQuestion);
 
 // Next 버튼 클릭시
