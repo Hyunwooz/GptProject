@@ -63,7 +63,7 @@ const addCategory = (data) => {
 const addOption = (data) => {
     const option = document.createElement('option')
     option.value = data
-    option.innerText = data
+    option.innerText = data.replace(/_/g, " ")
 
     return option
 };
