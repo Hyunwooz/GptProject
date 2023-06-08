@@ -24,36 +24,7 @@
 
 ### 3.1 프로젝트 구조
 
-OrmiProject
-| index.html
-|---src
-|   ㄴ---assets
-|       ㄴ---css
-| |         ㄴ---style.css
-|       ㄴ---img
-| |         ㄴ---Chat-1.png
-| |         ㄴ---Chat-2.png
-| |         ㄴ---display_sample.png
-| |         ㄴ---sample.png
-| |         ㄴ---sample_banner.png
-| |         ㄴ---search_sample.png
-| |         ㄴ---video_sample.png
-|       ㄴ---js
-| |         ㄴ---answer.js
-| |         ㄴ---connect.js
-| |         ㄴ---data.js
-| |         ㄴ---display.js
-| |         ㄴ---menu.js
-| |         ㄴ---modal.js
-| |         ㄴ---openAPI.js
-| |         ㄴ---question.js
-| |         ㄴ---sectionScroll.js
-| |         ㄴ---slide.js
-|       ㄴ---video
-|           ㄴ---sample.mp4
-|   ㄴ---view
-|       ㄴ---question.html
-|       ㄴ---service.html
+![tree](https://github.com/Hyunwooz/OrmiProject/assets/107661525/2ef50f32-6194-4d03-99ea-408af5ab4519)
 
 ### 3.2 개발 일정
 
