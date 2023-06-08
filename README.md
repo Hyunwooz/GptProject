@@ -47,7 +47,7 @@
     ![UI](https://github.com/Hyunwooz/OrmiProject/assets/107661525/50bfb928-f579-4656-9585-dd72aa46bc7a)
 
 -   메인 기능
-    ![sample](https://github.com/Hyunwooz/OrmiProject/assets/107661525/3f7a5d78-089c-47f0-8643-d3274bbe5271){: width="50%" height="50%"}
+    ![sample](https://github.com/Hyunwooz/OrmiProject/assets/107661525/3f7a5d78-089c-47f0-8643-d3274bbe5271)
 
 ## 6. 메인 기능
 
