@@ -38,8 +38,6 @@ OrmiProject
     |   |       style.css
     |   |       
     |   +---img
-    |   |       Chat-1.png
-    |   |       Chat-2.png
     |   |       display_sample.png
     |   |       sample.png
     |   |       sample_banner.png
