@@ -1,4 +1,5 @@
-// 스크롤 이벤트 발생을 지연시키는 함수
+// 이벤트 발생을 지연시키는 함수
+
 /**
  * @param {Function} func 함수 타입 : 실행될 Func
  * @param {int} delay int 타입 : 딜레이 시킬 시간 (밀리세컨드 ms)
@@ -13,7 +14,6 @@ export const debouncing = (func, delay) => {
     };
 }
 
-// 스크롤 이벤트 발생을 지연시키는 함수
 /**
  * @param {Function} func 함수 타입 : 실행될 Func
  * @param {int} delay int 타입 : 딜레이 시킬 시간 (밀리세컨드 ms)
