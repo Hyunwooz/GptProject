@@ -1,7 +1,5 @@
 import { throttling } from "./util.js";
 
-// const html = document.querySelector("html");
-
 let page = 1
 
 // 스크롤 입력시 Element로 이동
