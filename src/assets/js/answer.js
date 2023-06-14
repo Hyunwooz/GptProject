@@ -14,8 +14,21 @@ export const createSearch_AD = (data) => {
     const ad_Keyword_A = document.createElement("a");
 
     // 전체 검색 광고를 감싸주는 div attribute 설정
-    search_Div.classList =
-        "border border-slate-300 rounded-xl h-full mx-auto my-3 shadow-md py-1 px-3 md:py-3 md:px-6 lg:py-3 lg:px-[6rem] lg:w-4/5";
+    search_Div.classList = `
+        border 
+        border-slate-300 
+        rounded-xl 
+        h-full 
+        mx-auto 
+        my-3 
+        shadow-md 
+        py-1 
+        px-3 
+        md:py-3 
+        md:px-6 
+        lg:py-3 
+        lg:px-[6rem] 
+        lg:w-4/5`;
     sponser_P.innerText = "스폰서";
     sponser_P.classList = "font-bold text-sm";
 
@@ -67,14 +80,45 @@ export const createDisplay_AD = (data) => {
     const ad_Arrow_icon = document.createElement("i");
 
     // 전체 디스플레이 광고를 감싸주는 div attribute 설정
-    display_Wrap.classList =
-        "border border-slate-300 rounded-xl lg:w-4/5 h-full mx-auto md:py-2 md:px-[1rem] lg:py-3 lg:px-[2rem] my-3 shadow-md";
+    display_Wrap.classList = `
+        border 
+        border-slate-300 
+        rounded-xl 
+        h-full 
+        mx-auto 
+        my-3 
+        shadow-md
+        md:py-2 
+        md:px-[1rem] 
+        lg:w-4/5 
+        lg:py-3 
+        lg:px-[2rem]`;
     display_Div.classList = "border-2 border-gray-600"
     
     // 디스플레이 광고의 예시를 표시해주는 attribute 설정
     // 배너와 광고 문구 등이 표시되는 div 설정
-    ad_wrap.classList = "flex items-center bg-white p-1 pb-3 lg:p-3 lg:pb-5 mx-auto justify-center items-center";
-    ad_banner.classList = "w-10 h-10 bg-gray-800 mr-3 md:mr-6 md:w-[4rem] md:h-[4rem] lg:w-[5.5rem] lg:h-[5.5rem]";
+    ad_wrap.classList = `
+        flex 
+        items-center 
+        justify-center 
+        bg-white 
+        p-1 
+        pb-3 
+        mx-auto 
+        lg:p-3 
+        lg:pb-5 
+        `;
+    ad_banner.classList = `
+        w-10 
+        h-10 
+        bg-gray-800 
+        mr-3 
+        md:mr-6 
+        md:w-[4rem] 
+        md:h-[4rem] 
+        lg:w-[5.5rem] 
+        lg:h-[5.5rem]
+        `;
     
     // 광고의 추천 제목과 스크립트가 표시되는 div 설정
     ad_Div.classList = "mt-1 w-2/3"
@@ -84,7 +128,20 @@ export const createDisplay_AD = (data) => {
     ad_Desc_P.innerText = data.ad_description;
     
     // 화살표 아이콘이 표시되는 div 설정
-    ad_Arrow.classList = "w-6 h-6 ml-1 bg-blue-600 rounded-full flex justify-center items-center md:w-[3rem] md:h-[3rem] md:ml-3 lg:w-[3.5rem] lg:h-[3.5rem]"
+    ad_Arrow.classList = `
+        w-6 
+        h-6 
+        ml-1 
+        bg-blue-600 
+        rounded-full 
+        flex 
+        justify-center 
+        items-center 
+        md:w-[3rem] 
+        md:h-[3rem] 
+        md:ml-3 
+        lg:w-[3.5rem] 
+        lg:h-[3.5rem]`;
     ad_Arrow_icon.classList = "fa-solid fa-chevron-right text-white text-md md:text-xl lg:text-4xl"
     
     // 예시이미지들을 setAttribute 해주기
@@ -129,7 +186,18 @@ export const createVideo_AD = (data) => {
     const recommand_Desc_p = document.createElement("p");
     
     // 전체 동영상 광고를 감싸주는 attribute 설정
-    video_Wrap.classList = "border border-slate-300 rounded-xl w-full h-full mx-auto py-3 px-3 lg:px-[2rem] my-3 shadow-md"
+    video_Wrap.classList = `
+        border 
+        border-slate-300 
+        rounded-xl 
+        w-full 
+        h-full 
+        mx-auto 
+        py-3 
+        px-3 
+        my-3 
+        shadow-md
+        lg:px-[2rem]`;
     video_Div.classList = "p-4 bg-black"
     video_Display_Div.classList ="relative"
     
@@ -139,12 +207,47 @@ export const createVideo_AD = (data) => {
 
     // 동영상 광고의 예시를 표시해주는 attribute 설정
     // Skip div 설정
-    video_Display_Skip.classList = "absolute right-0 bottom-7 lg:bottom-8 flex w-1/5 lg:w-1/6 h-8 lg:h-10 justify-center items-center bg-black opacity-70 text-sm lg:text-xl text-white"
+    video_Display_Skip.classList = `
+        absolute 
+        right-0 
+        bottom-7 
+        w-1/5
+        flex 
+        justify-center 
+        items-center 
+        bg-black 
+        opacity-70 
+        text-sm 
+        text-white
+        lg:bottom-8 
+        lg:w-1/6 h-8 
+        lg:h-10 
+        lg:text-xl`;
     video_Display_Skip.innerText = "Skip ad"
     
     // 예시 배너 이미지 설정
-    video_Display_Ad.classList = "absolute left-0 bottom-6 flex w-[50%] md:w-[38%] h-10 md:h-14 items-center bg-white opacity-90 text-xl p-2"
-    video_Display_Ad_Img.classList = "w-7 h-7 lg:w-12 lg:h-12 bg-gray-800 border border-slate-300"
+    video_Display_Ad.classList = `
+        absolute 
+        left-0 
+        bottom-6 
+        flex 
+        items-center 
+        w-[50%] 
+        h-10 
+        bg-white 
+        opacity-90 
+        text-xl 
+        p-2
+        md:w-[38%] 
+        md:h-14`;
+    video_Display_Ad_Img.classList = `
+        w-7 
+        h-7 
+        bg-gray-800 
+        border 
+        border-slate-300
+        lg:w-12 
+        lg:h-12`;
     video_Display_Ad_Img.setAttribute("src", "../assets/img/sample_banner.png");
     video_Display_Ad_Img.setAttribute("alt", "샘플 배너 이미지");
     
